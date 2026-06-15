@@ -19,19 +19,29 @@
             "icon": "fa-solid fa-gamepad"
         },
         "metaInfo": [
-            {"label": "Year", "value": "2025"},
-            {"label": "Platform", "value": "PC"},
-            {"label": "Engine", "value": "Unity Engine"},
-            {"label": "Role", "value": "Game Developer"}
+            {"label": "Genre", "value": "2D Platformer"},
+            {"label": "Core System", "value": "Physics & Collectibles"},
+            {"label": "Performance", "value": "60 FPS Target"},
+            {"label": "Platform", "value": "Windows / WebGL"}
         ],
-        "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments.",
+        "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments. It focuses on tight jump mechanics and nostalgic aesthetics.",
         "features": [
-            {"icon": "fa-solid fa-coins", "title": "Collectibles", "desc": "Coins & Score"},
-            {"icon": "fa-solid fa-up-long", "title": "Level System", "desc": "Unlock & Progression"},
+            {"icon": "fa-solid fa-coins", "title": "Collectibles", "desc": "Coins & Score System"},
+            {"icon": "fa-solid fa-up-long", "title": "Level System", "desc": "Unlock & Linear Progression"},
             {"icon": "fa-solid fa-volume-high", "title": "Audio Settings", "desc": "SFX & Music Control"},
-            {"icon": "fa-solid fa-table-columns", "title": "UI System", "desc": "Menus & Panels"},
+            {"icon": "fa-solid fa-table-columns", "title": "UI System", "desc": "Interactive Menus & Panels"},
             {"icon": "fa-solid fa-shuffle", "title": "Scene Logic", "desc": "Smooth Transitions"},
-            {"icon": "fa-solid fa-floppy-disk", "title": "Save System", "desc": "Player Progress"}
+            {"icon": "fa-solid fa-floppy-disk", "title": "Save System", "desc": "Player Progress Retention"}
+        ],
+        "techHighlights": [
+            {"icon": "fa-cubes", "color": "c-purple", "title": "Physics Engine", "desc": "Custom 2D rigid body physics for precise jumping."},
+            {"icon": "fa-database", "color": "c-green", "title": "State Management", "desc": "Clean architecture for handling game states."},
+            {"icon": "fa-sliders", "color": "c-blue", "title": "Audio Manager", "desc": "Centralized audio logic for all SFX and BGM."},
+            {"icon": "fa-desktop", "color": "c-orange", "title": "Responsive UI", "desc": "Canvas setups that scale across different monitors."}
+        ],
+        "challenges": [
+            {"challenge": "Handling pixel-perfect collisions without getting stuck on corners.", "solution": "Adjusted collider physics materials and used composite colliders."},
+            {"challenge": "Creating seamless transitions between different game levels.", "solution": "Developed an asynchronous scene loader with fade-in/fade-out UI."}
         ],
         "videos": [
             {"title": "Full Gameplay Walkthrough", "url": "https://www.youtube.com/embed/EDXKdE1kVC8"}
@@ -49,9 +59,9 @@
         "cta": {
             "quote": "Building fun, optimized and scalable games that players love.",
             "links": [
-                {"icon": "fa-brands fa-whatsapp", "iconColor": "#25D366", "text": "WhatsApp", "url": "https://wa.me/917511104768"},
-                {"icon": "fa-solid fa-envelope", "iconColor": "#ea4335", "text": "Email", "url": "mailto:abhilashsaji.dev@gmail.com"},
-                {"icon": "fa-brands fa-linkedin", "iconColor": "#0077B5", "text": "LinkedIn", "url": "https://www.linkedin.com/in/abhilashsaji"}
+                {"icon": "fa-whatsapp", "iconColor": "#25D366", "text": "WhatsApp", "url": "https://wa.me/917511104768"},
+                {"icon": "fa-envelope", "iconColor": "#ffffff", "text": "Email", "url": "mailto:abhilashsaji.dev@gmail.com"},
+                {"icon": "fa-linkedin", "iconColor": "#0077B5", "text": "LinkedIn", "url": "https://www.linkedin.com/in/abhilashsaji"}
             ]
         }
     },
@@ -98,7 +108,8 @@
         "challenges": [
             {"challenge": "Frequent object instantiation caused frame drops on mobile devices.", "solution": "Implemented an object pooling system which improved performance and reduced GC spikes."},
             {"challenge": "Managing multiple audio sources and real-time volume control.", "solution": "Integrated Unity Audio Mixer with dynamic groups and exposed settings to the player."},
-            {"challenge": "Increasing difficulty without making gameplay unfair.", "solution": "Designed a speed-curve algorithm with balanced obstacle spawn patterns."}
+            {"challenge": "Increasing difficulty without making gameplay unfair.", "solution": "Designed a speed-curve algorithm with balanced obstacle spawn patterns."},
+            {"challenge": "Data loss risk during app closure.", "solution": "Built an asynchronous, non-blocking save framework."}
         ],
         "videos": [
             {"title": "Gameplay Demo", "url": "https://www.youtube.com/embed/cogOMnyvoHs"}
