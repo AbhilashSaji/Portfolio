@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Pixel Forest Adventure",
+        "tag": "2D Platformer",
+        "image": "Images/platformer.png",
+        "desc": "A 2D platformer with collectible mechanics, level progression, score tracking and sound effects.",
+        "isHighlighted": true
+    },
+    {
+        "id": 2,
+        "name": "Neon Runner",
+        "tag": "Endless Runner",
+        "image": "Images/runner.png",
+        "desc": "Fast-paced endless runner with increasing speed, obstacles and high score system.",
+        "isHighlighted": true
+    },
+    {
+        "id": 3,
+        "name": "Tom & Jerry Loading",
+        "tag": "Animated Loading",
+        "image": "Images/loading.png",
+        "desc": "Animated loading screen with smooth transitions and visual UI effects.",
+        "isHighlighted": true
+    },
+    {
+        "id": 4,
+        "name": "YourGameName",
+        "tag": "Vehicle Simulation",
+        "image": "Images/car-game.png",
+        "desc": "Realistic car parking game with smooth controls, physics-based driving mechanics, and challenging levels.",
+        "isHighlighted": true
+    },
+    {
+        "id": 5,
+        "name": "The Silent Prayer",
+        "tag": "Horror Survival",
+        "image": "Images/horror.png",
+        "desc": "Survival horror game with scary atmosphere, mission tracking, and intense gameplay loops.",
+        "isHighlighted": true
+    },
+    {
+        "id": 6,
+        "name": "Future Alpha Game",
+        "tag": "Action RPG",
+        "image": "Images/platformer.png",
+        "desc": "An upcoming massive open world game build entirely inside Unity engine.",
+        "isHighlighted": false
+    }
+]
