@@ -175,7 +175,6 @@
         .hire-left h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 4px; }
         .hire-left p { color: var(--text-muted); font-size: 0.82rem; }
         
-        /* --- FIXED: GLOW EFFECT FOR HIRE ME BUTTON --- */
         .btn-hire-me { 
             background: var(--primary-green); 
             color: var(--bg-dark); 
@@ -239,7 +238,6 @@
             "retina_detect": true
         });
 
-        // --- CORRECT JS LOGIC FOR PROJECT-DETAILS PAGE ---
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = parseInt(urlParams.get('id'));
 
@@ -309,6 +307,16 @@
                         });
                     }
 
+                    // --- DYNAMIC META DASHBOARD SYSTEM FIX ---
+                    const metaMarkup = proj.metaInfo ? proj.metaInfo.map(meta => `
+                        <div class="meta-box"><span>${meta.label}</span><p>${meta.value}</p></div>
+                    `).join('') : `
+                        <div class="meta-box"><span>Year</span><p>${proj.year || '2026'}</p></div>
+                        <div class="meta-box"><span>Platform</span><p>${proj.platform || 'PC'}</p></div>
+                        <div class="meta-box"><span>Engine</span><p>${proj.engine || 'Unity'}</p></div>
+                        <div class="meta-box"><span>Role</span><p>${proj.role || 'Developer'}</p></div>
+                    `;
+
                     document.getElementById('details-root').innerHTML = `
                         
                         <div class="hero-grid">
@@ -327,10 +335,7 @@
                                 </div>
                                 
                                 <div class="meta-dashboard-grid">
-                                    <div class="meta-box"><span>Year</span><p>${proj.year || '2026'}</p></div>
-                                    <div class="meta-box"><span>Platform</span><p>${proj.platform || 'PC'}</p></div>
-                                    <div class="meta-box"><span>Engine</span><p>${proj.engine || 'Unity'}</p></div>
-                                    <div class="meta-box"><span>Role</span><p>${proj.role || 'Developer'}</p></div>
+                                    ${metaMarkup}
                                 </div>
                                 
                                 <div class="action-buttons">
@@ -375,7 +380,7 @@
                                 <h3>Like this project?</h3>
                                 <p>I'm available for freelance contract work. Let's build something amazing together!</p>
                             </div>
-                            <a href="mailto:abhilashsaji.dev@gmail.com?subject=Project Inquiry&body=Hi Abhilash,%0D%0AI would like to discuss a project with you." class="btn-hire-me">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
+                            <a href="index.html#contact" class="btn-hire-me">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
                         </div>
                     `;
                 })
