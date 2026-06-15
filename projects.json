@@ -13,6 +13,12 @@
         "platform": "PC",
         "engine": "Unity Engine",
         "role": "Game Developer",
+        "metaInfo": [
+            {"label": "Year", "value": "2025"},
+            {"label": "Platform", "value": "PC"},
+            {"label": "Engine", "value": "Unity Engine"},
+            {"label": "Role", "value": "Game Developer"}
+        ],
         "liveDemo": "https://mrshadowseverz.github.io/Pixel-Forest-Adventure/",
         "videoUrl": "https://www.youtube.com/embed/EDXKdE1kVC8",
         "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments.",
@@ -52,6 +58,12 @@
         "platform": "Mobile",
         "engine": "Unity Engine",
         "role": "Game Developer",
+        "metaInfo": [
+            {"label": "Genre", "value": "Endless Runner"},
+            {"label": "Core System", "value": "Procedural Spawning"},
+            {"label": "Performance", "value": "60 FPS Target"},
+            {"label": "Platform", "value": "Android Mobile"}
+        ],
         "liveDemo": "https://mrshadowseverz.github.io/Tom-And-Jerry/",
         "videoUrl": "https://www.youtube.com/embed/cogOMnyvoHs",
         "overview": "A mobile endless runner developed in Unity, featuring fast-paced obstacle avoidance, collectible-driven progression, and real-time score tracking within a stylized retro-futuristic world. The project emphasizes performance optimization through object pooling, efficient state management, and mobile-first design principles. Additional features include persistent save systems, audio mixer integration, haptic feedback, responsive UI, and scalable game architecture, delivering a smooth and engaging player experience across a wide range of devices.",
