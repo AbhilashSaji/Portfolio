@@ -62,20 +62,21 @@
 
         .logo i { color: var(--primary-green); }
 
-        /* --- ARCHIVE MAIN LAYOUT CONTAINER --- */
+        /* --- ARCHIVE MAIN LAYOUT --- */
         .archive-section {
             padding: 160px 8% 40px 8%;
         }
 
         .archive-flex-header {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
             margin-bottom: 45px;
         }
 
         .archive-title-area {
-            max-width: 55%;
+            max-width: 100%;
         }
 
         .archive-subtitle {
@@ -101,33 +102,38 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
+            max-width: 700px;
         }
 
-        /* --- FILTER BUTTONS ROW LAYOUT --- */
+        /* --- 8 EXTENDED FILTER BUTTONS ROW LAYOUT --- */
         .filter-buttons-row {
             display: flex;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 25px;
         }
 
         .btn-filter {
             background-color: rgba(255, 255, 255, 0.01);
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: var(--text-main);
-            padding: 12px 24px;
+            padding: 10px 18px;
             border-radius: 6px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
             transition: all 0.25s ease;
         }
 
-        .btn-filter i { font-size: 0.95rem; color: var(--text-muted); }
+        .btn-filter i { font-size: 0.85rem; color: var(--text-muted); }
 
         .btn-filter:hover, .btn-filter.active {
             border-color: var(--primary-green);
@@ -136,7 +142,7 @@
         }
         .btn-filter.active i, .btn-filter:hover i { color: var(--primary-green); }
 
-        /* --- CARDS GRID ARCHITECTURE --- */
+        /* --- CARDS GRID --- */
         .archive-projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -159,7 +165,6 @@
             border-color: rgba(255, 255, 255, 0.15);
         }
 
-        /* Imgwrapper with relative positioning to host absolute badges */
         .img-wrapper {
             position: relative;
             width: 100%;
@@ -168,7 +173,6 @@
             overflow: hidden;
         }
 
-        /* --- THE FIX: ADDED HIGH Z-INDEX AND MAX OPACITY TO TAGS --- */
         .tag-badge {
             position: absolute;
             top: 15px;
@@ -179,21 +183,19 @@
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            z-index: 10;          /* High z-index keeps it above img */
-            opacity: 1 !important;  /* Force maximum visibility */
+            z-index: 10;
+            opacity: 1 !important;
             letter-spacing: 0.5px;
         }
 
-        /* --- THE FIX: REMOVED OPACITY FROM IMAGE --- */
         .img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* opacity: 0.85; <-- DELETED THIS LINE to stop image from dimming tags inside it */
             z-index: 1;
         }
 
-        /* Dynamic Border Color allocations dictated by JSON keys */
+        /* Border & Text Colors for Tags */
         .tag-green { border: 1px solid #00ff66; color: #00ff66; }
         .tag-purple { border: 1px solid #bb55ff; color: #bb55ff; }
         .tag-blue { border: 1px solid #33a6ff; color: #33a6ff; }
@@ -222,11 +224,9 @@
             color: #ffffff;
         }
 
-        .theme-icon {
-            font-size: 1.1rem;
-        }
+        .theme-icon { font-size: 1.1rem; }
 
-        /* Hologram Graphics Right Corner Icon Colors */
+        /* Icon Accent Colors */
         .color-green { color: #00ff66; }
         .color-purple { color: #bb55ff; }
         .color-blue { color: #33a6ff; }
@@ -241,14 +241,12 @@
             flex-grow: 1;
         }
 
-        /* Technology Pills Row (EXACT MOCKUP STYLE MATCH) */
         .tech-badges-row {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 22px;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding-top: 15px;
+            padding-top: 5px;
         }
 
         .badge-item {
@@ -270,9 +268,10 @@
             align-items: center;
             gap: 8px;
             margin-top: auto;
+            letter-spacing: 0.5px;
         }
 
-        /* --- CONTACT ROW PANEL BAR --- */
+        /* --- CONTACT CTA BAR --- */
         .contact-cta-bar {
             display: flex;
             justify-content: center;
@@ -318,10 +317,8 @@
         }
 
         @media (max-width: 968px) {
-            .archive-flex-header { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
-            .archive-title-area { max-width: 100%; }
-            .filter-buttons-row { flex-wrap: wrap; justify-content: center; }
-            .contact-cta-bar { flex-direction: column; gap: 15px; }
+            .archive-flex-header { align-items: center; text-align: center; }
+            .filter-buttons-row { justify-content: center; }
             header { padding: 20px 4%; }
             footer { flex-direction: column; gap: 15px; }
         }
@@ -339,18 +336,22 @@
         
         <div class="archive-flex-header">
             <div class="archive-title-area">
-                <div class="archive-subtitle">My Work</div>
+                <div class="archive-subtitle">Classification Filters</div>
                 <h1 class="archive-main-title">All Projects</h1>
                 <p class="archive-desc">
-                    Explore a collection of games I've designed and developed using Unity and C#. Each project reflects creativity, problem-solving, and passion for gameplay.
+                    Explore a collection of games I've designed and developed using Unity and C#. Filter down by specific structural sub-genres.
                 </p>
             </div>
             
             <div class="filter-buttons-row">
                 <button class="btn-filter active" onclick="filterCategory('all', this)"><i class="fa-solid fa-table-cells"></i> All</button>
-                <button class="btn-filter" onclick="filterCategory('2d', this)"><i class="fa-solid fa-gamepad"></i> 2D Games</button>
-                <button class="btn-filter" onclick="filterCategory('3d', this)"><i class="fa-solid fa-cube"></i> 3D Games</button>
-                <button class="btn-filter" onclick="filterCategory('other', this)"><i class="fa-solid fa-ellipsis-vertical"></i> Other</button>
+                <button class="btn-filter" onclick="filterCategory('platformer', this)"><i class="fa-solid fa-tree"></i> Platformers</button>
+                <button class="btn-filter" onclick="filterCategory('metroidvania', this)"><i class="fa-solid fa-dungeon"></i> Metroidvanias</button>
+                <button class="btn-filter" onclick="filterCategory('isometric', this)"><i class="fa-solid fa-layer-group"></i> Isometric</button>
+                <button class="btn-filter" onclick="filterCategory('fps-tps', this)"><i class="fa-solid fa-crosshairs"></i> FPS & TPS</button>
+                <button class="btn-filter" onclick="filterCategory('mobile', this)"><i class="fa-solid fa-mobile-screen-button"></i> Mobile</button>
+                <button class="btn-filter" onclick="filterCategory('simulation', this)"><i class="fa-solid fa-car-side"></i> Simulation</button>
+                <button class="btn-filter" onclick="filterCategory('ar-vr', this)"><i class="fa-solid fa-vr-cardboard"></i> AR & VR</button>
             </div>
         </div>
 
@@ -365,52 +366,52 @@
     </main>
 
     <footer>
-        <div>&copy; 2024 Game Developer. All rights reserved.</div>
+        <div>&copy; 2026 Game Developer. All rights reserved.</div>
         <div>Let's Build Something Amazing Together! 🚀</div>
     </footer>
 
     <script>
         let masterProjectsList = [];
 
-        // Correct Fetch Call Loop Implementation
         fetch('projects.json')
             .then(res => res.json())
             .then(data => {
                 masterProjectsList = data;
                 renderArchiveCards(masterProjectsList);
             })
-            .catch(err => {
-                console.error("Local diagnosting path update log restricted access logging.", err);
-            });
+            .catch(err => console.error("Error loading JSON:", err));
 
         function renderArchiveCards(list) {
             const gridRoot = document.getElementById('archive-grid-root');
             
             gridRoot.innerHTML = list.map(proj => {
-                // Dynamically fetch stack directly from dynamic JSON array profiles
-                const badgesMarkup = proj.tech.map(t => `<span class="badge-item">${t}</span>`).join('');
+                const techList = proj.tech || ["Unity", "C#", "PC"];
+                const badgesMarkup = techList.map(t => `<span class="badge-item">${t}</span>`).join('');
 
-                // Apply unique icon color scheme classes based on image mockups
-                let colorClass = "color-green";
-                if (proj.id === 2) colorClass = "color-purple";
-                if (proj.id === 3) colorClass = "color-blue";
-                if (proj.id === 4) colorClass = "color-orange";
-                if (proj.id === 5) colorClass = "color-red";
-                if (proj.id === 6) colorClass = "color-purple";
-                if (proj.id === 7) colorClass = "color-blue";
-                if (proj.id === 9) colorClass = "color-red";
-                if (proj.id === 10) colorClass = "color-orange";
+                // Precise visual matching icon configurations per unique categories
+                let fallbackIcon = "fa-solid fa-gamepad";
+                if(proj.category === "platformer") fallbackIcon = "fa-solid fa-tree";
+                if(proj.category === "metroidvania") fallbackIcon = "fa-solid fa-dungeon";
+                if(proj.category === "isometric") fallbackIcon = "fa-solid fa-layer-group";
+                if(proj.category === "fps-tps") fallbackIcon = "fa-solid fa-crosshairs";
+                if(proj.category === "mobile") fallbackIcon = "fa-solid fa-bolt";
+                if(proj.category === "simulation") fallbackIcon = "fa-solid fa-car-side";
+                if(proj.category === "ar-vr") fallbackIcon = "fa-solid fa-vr-cardboard";
+
+                let chosenColor = proj.tagColor || "green";
+                let tagClass = `tag-${chosenColor}`;
+                let iconColorClass = `color-${chosenColor}`;
 
                 return `
                     <div class="archive-card">
                         <div class="img-wrapper">
-                            <span class="tag-badge ${colorClass.replace('color','tag')}">${proj.tag}</span>
+                            <span class="tag-badge ${tagClass}">${proj.tag}</span>
                             <img src="${proj.image}" alt="${proj.name}" onerror="this.src='https://via.placeholder.com/350x240/041219/ffffff?text=${proj.name}'">
                         </div>
                         <div class="info-panel">
                             <div class="title-row">
                                 <h3 class="proj-name">${proj.name}</h3>
-                                <i class="${proj.icon} ${colorClass} theme-icon"></i>
+                                <i class="${fallbackIcon} ${iconColorClass} theme-icon"></i>
                             </div>
                             <p class="proj-desc">${proj.desc}</p>
                             
@@ -418,14 +419,13 @@
                                 ${badgesMarkup}
                             </div>
                             
-                            <a href="#" class="proj-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="proj-link">VIEW PROJECT <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 `;
             }).join('');
         }
 
-        // Filtering engine Module module operacional module module operational
         function filterCategory(categoryKey, btnRef) {
             document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
             btnRef.classList.add('active');
@@ -433,8 +433,8 @@
             if(categoryKey === 'all') {
                 renderArchiveCards(masterProjectsList);
             } else {
-                const results = masterProjectsList.filter(p => p.category === categoryKey);
-                renderArchiveCards(results);
+                const filtered = masterProjectsList.filter(p => p.category === categoryKey);
+                renderArchiveCards(filtered);
             }
         }
     </script>
