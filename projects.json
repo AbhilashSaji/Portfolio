@@ -25,17 +25,21 @@
             {"label": "Platform", "value": "Windows / WebGL"}
         ],
         "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments. It focuses on tight jump mechanics and nostalgic aesthetics.",
-        "features": [
-            {"icon": "fa-solid fa-coins", "title": "Responsive Player Controls", "desc": "Smooth movement, jumping, and combat interactions."},
-            {"icon": "fa-solid fa-up-long", "title": "Tilemap-Based Level Design", "desc": "Built using Unity Tilemaps for scalable level creation."},
-            {"icon": "fa-solid fa-volume-high", "title": "Combat & Attack System", "desc": "Enemy interaction with real-time hit detection."},
-            {"icon": "fa-solid fa-table-columns", "title": "Collectible Progression", "desc": "Coin collection integrated with scoring and rewards."},
-            {"icon": "fa-solid fa-shuffle", "title": "Level Unlock Framework", "desc": "Star-based progression and stage unlocking system."},
-            {"icon": "fa-solid fa-floppy-disk", "title": "Persistent Save System", "desc": "Stores player progress, settings, and achievements."},
-            {"icon": "fa-solid fa-volume-high", "title": "Audio Management", "desc": "Dedicated music, SFX, and volume control system."},
-            {"icon": "fa-solid fa-table-columns", "title": "Real-Time Score Tracking", "desc": "Dynamic scoring with performance-based progression."},
-            {"icon": "fa-solid fa-shuffle", "title": "Reusable UI Architecture", "desc": "Modular menus, settings, level selection, and victory screens."},
-            {"icon": "fa-solid fa-floppy-disk", "title": "Optimized 2D Performance", "desc": "Efficient asset management and streamlined gameplay systems."}
+        "miniFeatures": [
+            {"icon": "fa-solid fa-coins", "title": "Collectibles"},
+            {"icon": "fa-solid fa-up-long", "title": "Level System"},
+            {"icon": "fa-solid fa-volume-high", "title": "Audio Settings"},
+            {"icon": "fa-solid fa-table-columns", "title": "UI System"},
+            {"icon": "fa-solid fa-shuffle", "title": "Scene Logic"},
+            {"icon": "fa-solid fa-floppy-disk", "title": "Save System"}
+        ],
+        "keyFeatures": [
+            {"title": "Collectibles", "desc": "Coins & Score System"},
+            {"title": "Level System", "desc": "Unlock & Linear Progression"},
+            {"title": "Audio Settings", "desc": "SFX & Music Control"},
+            {"title": "UI System", "desc": "Interactive Menus & Panels"},
+            {"title": "Scene Logic", "desc": "Smooth Transitions"},
+            {"title": "Save System", "desc": "Player Progress Retention"}
         ],
         "techHighlights": [
             {"icon": "fa-cubes", "color": "c-purple", "title": "Physics Engine", "desc": "Custom 2D rigid body physics for precise jumping."},
@@ -44,11 +48,8 @@
             {"icon": "fa-desktop", "color": "c-orange", "title": "Responsive UI", "desc": "Canvas setups that scale across different monitors."}
         ],
         "challenges": [
-            {"challenge": "Managing Level Progression.", "solution": "Developed a star-rating and level-unlock framework using persistent save data."},
-            {"challenge": "Synchronizing Audio Across Scenes", "solution": "Implemented a centralized audio management system with separate music and SFX channels, volume controls, and persistent settings."},
-            {"challenge": "Building Scalable Levels", "solution": "Used Unity's Tilemap system to create modular environments, enabling faster level creation, easier iteration, and consistent collision handling across multiple stages."},
-            {"challenge": "Optimizing 2D Performance", "solution": "Leveraged Unity Tilemaps, sprite atlasing, and efficient scene organization to reduce draw calls and maintain stable frame rates."}
-            
+            {"challenge": "Handling pixel-perfect collisions without getting stuck on corners.", "solution": "Adjusted collider physics materials and used composite colliders."},
+            {"challenge": "Creating seamless transitions between different game levels.", "solution": "Developed an asynchronous scene loader with fade-in/fade-out UI."}
         ],
         "videos": [
             {"title": "Full Gameplay Walkthrough", "url": "https://www.youtube.com/embed/EDXKdE1kVC8"}
@@ -66,9 +67,9 @@
         "cta": {
             "quote": "Building fun, optimized and scalable games that players love.",
             "links": [
-                {"icon": "fa-whatsapp", "iconColor": "#25D366", "text": "WhatsApp", "url": "https://wa.me/917511104768"},
-                {"icon": "fa-envelope", "iconColor": "#ffffff", "text": "Email", "url": "mailto:abhilashsaji.dev@gmail.com"},
-                {"icon": "fa-linkedin", "iconColor": "#0077B5", "text": "LinkedIn", "url": "https://www.linkedin.com/in/abhilashsaji"}
+                {"icon": "fa-brands fa-whatsapp", "iconColor": "#25D366", "text": "WhatsApp", "url": "https://wa.me/917511104768"},
+                {"icon": "fa-solid fa-envelope", "iconColor": "#ea4335", "text": "Email", "url": "mailto:abhilashsaji.dev@gmail.com"},
+                {"icon": "fa-brands fa-linkedin", "iconColor": "#0077B5", "text": "LinkedIn", "url": "https://www.linkedin.com/in/abhilashsaji"}
             ]
         }
     },
@@ -98,13 +99,21 @@
             {"label": "Platform", "value": "Android Mobile"}
         ],
         "overview": "A mobile endless runner developed in Unity, featuring fast-paced obstacle avoidance, collectible-driven progression, and real-time score tracking within a stylized retro-futuristic world. The project emphasizes performance optimization through object pooling, efficient state management, and mobile-first design principles.",
-        "features": [
-            {"icon": "fa-solid fa-gamepad", "title": "Responsive Controls", "desc": "Keyboard & Swipe Input"},
-            {"icon": "fa-solid fa-bolt", "title": "Dynamic Difficulty", "desc": "Progressive Challenge"},
-            {"icon": "fa-solid fa-mobile-screen-button", "title": "Haptic Feedback", "desc": "Immersive Response"},
-            {"icon": "fa-solid fa-trophy", "title": "Score Tracking", "desc": "Persistent Progression"},
-            {"icon": "fa-solid fa-music", "title": "Audio System", "desc": "Dynamic Sound Mixing"},
-            {"icon": "fa-solid fa-mobile-screen", "title": "Mobile Optimized", "desc": "Smooth Performance"}
+        "miniFeatures": [
+            {"icon": "fa-solid fa-gamepad", "title": "Responsive<br>Controls"},
+            {"icon": "fa-solid fa-bolt", "title": "Dynamic<br>Difficulty"},
+            {"icon": "fa-solid fa-mobile-screen-button", "title": "Haptic<br>Feedback"},
+            {"icon": "fa-solid fa-trophy", "title": "Score<br>Tracking"},
+            {"icon": "fa-solid fa-music", "title": "Audio<br>System"},
+            {"icon": "fa-solid fa-mobile-screen", "title": "Mobile<br>Optimized"}
+        ],
+        "keyFeatures": [
+            {"title": "Responsive Controls", "desc": "Keyboard & Swipe Input"},
+            {"title": "Dynamic Difficulty", "desc": "Progressive Challenge"},
+            {"title": "Haptic Feedback", "desc": "Immersive Response"},
+            {"title": "Score Tracking", "desc": "Persistent Progression"},
+            {"title": "Audio System", "desc": "Dynamic Sound Mixing"},
+            {"title": "Mobile Optimized", "desc": "Smooth Performance"}
         ],
         "techHighlights": [
             {"icon": "fa-cubes", "color": "c-purple", "title": "Modular Architecture", "desc": "Singleton-based systems for scalable management."},
