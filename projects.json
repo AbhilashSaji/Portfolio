@@ -7,7 +7,7 @@
         "category": "platformer",
         "image": "Images/Pixel-Forest-Adventure/PixelForestThumbnail.png",
         "desc": "A 2D platformer with collectible mechanics, level progression, score tracking and sound effects.",
-        "tech": ["Unity", "C#", "2D"],
+        "tech": ["Unity", "C#", "2D","TileMap","2D Animation"],
         "isHighlighted": true,
         "year": "2025",
         "platform": "PC",
@@ -22,11 +22,12 @@
             {"label": "Genre", "value": "2D Platformer"},
             {"label": "Core System", "value": "Physics & Collectibles"},
             {"label": "Performance", "value": "60 FPS Target"},
-            {"label": "Platform", "value": "Windows / WebGL"}
+            {"label": "Platform", "value": "Windows"}
         ],
-        "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments. It focuses on tight jump mechanics and nostalgic aesthetics.",
+        "overview": "Pixel Forest Adventure is a 2D pixel-art platformer featuring collectible-based progression, combat mechanics, level unlocking, and persistent player progression. Players explore handcrafted forest environments, collect coins, defeat obstacles, and unlock increasingly challenging stages while striving for high scores and perfect level completion.",
         "miniFeatures": [
             {"icon": "fa-solid fa-coins", "title": "Collectibles"},
+            {"icon": "fa-solid fa-khanda", "title": "Combat System"}
             {"icon": "fa-solid fa-up-long", "title": "Level System"},
             {"icon": "fa-solid fa-volume-high", "title": "Audio Settings"},
             {"icon": "fa-solid fa-table-columns", "title": "UI System"},
@@ -34,22 +35,30 @@
             {"icon": "fa-solid fa-floppy-disk", "title": "Save System"}
         ],
         "keyFeatures": [
-            {"title": "Collectibles", "desc": "Coins & Score System"},
-            {"title": "Level System", "desc": "Unlock & Linear Progression"},
-            {"title": "Audio Settings", "desc": "SFX & Music Control"},
+            {"title": "Responsive Player Controls", "desc": "Smooth movement, jumping, and combat interactions."},
+            {"title": "Tilemap-Based Level Design", "desc": "Built using Unity Tilemaps for scalable level creation."},
+            {"title": "Combat & Attack System", "desc": "Enemy interaction with real-time hit detection."},
             {"title": "UI System", "desc": "Interactive Menus & Panels"},
-            {"title": "Scene Logic", "desc": "Smooth Transitions"},
-            {"title": "Save System", "desc": "Player Progress Retention"}
+            {"title": "Collectible Progression", "desc": "Coin collection integrated with scoring and rewards."},
+            {"title": "Level Unlock Framework", "desc": "Star-based progression and stage unlocking system."},
+            {"title": "Persistent Save System", "desc": "Stores player progress, settings, and achievements."},
+            {"title": "Audio Management", "desc": "Dedicated music, SFX, and volume control system."},
+            {"title": "Real-Time Score Tracking", "desc": "Dynamic scoring with performance-based progression."},
+            {"title": "Reusable UI Architecture", "desc": "Modular menus, settings, level selection, and victory screens."},
+            {"title": "Optimized 2D Performance", "desc": "Efficient asset management and streamlined gameplay systems."}
         ],
         "techHighlights": [
             {"icon": "fa-cubes", "color": "c-purple", "title": "Physics Engine", "desc": "Custom 2D rigid body physics for precise jumping."},
-            {"icon": "fa-database", "color": "c-green", "title": "State Management", "desc": "Clean architecture for handling game states."},
+            {"icon": "fa-database", "color": "c-green", "title": "Tilemap System", "desc": "Modular level construction using Unity Tilemaps."},
             {"icon": "fa-sliders", "color": "c-blue", "title": "Audio Manager", "desc": "Centralized audio logic for all SFX and BGM."},
             {"icon": "fa-desktop", "color": "c-orange", "title": "Responsive UI", "desc": "Canvas setups that scale across different monitors."}
         ],
         "challenges": [
-            {"challenge": "Handling pixel-perfect collisions without getting stuck on corners.", "solution": "Adjusted collider physics materials and used composite colliders."},
-            {"challenge": "Creating seamless transitions between different game levels.", "solution": "Developed an asynchronous scene loader with fade-in/fade-out UI."}
+            {"challenge": "Building multiple levels manually would make content creation slow and difficult to maintain.", "solution": "Implemented Unity Tilemaps to create modular, reusable level layouts, allowing faster iteration and easier level expansion."},
+            {"challenge": "Players needed a way to continue their progression between sessions.", "solution": "Developed a persistent save system to store unlocked levels, collected stars, and user preferences."},
+            {"challenge": "Audio settings needed to persist across scenes and gameplay sessions.", "solution": "Implemented a centralized audio management system with configurable music and sound effect controls."},
+            {"challenge": "Increasing level complexity could impact performance and responsiveness.", "solution": "Optimized tilemap usage, asset organization, and scene structure to maintain stable frame rates."},
+            {"challenge": "Creating meaningful player interaction with environmental obstacles.", "solution": "Developed a destructible bamboo system where player attacks trigger obstacle destruction and award score bonuses, enhancing gameplay engagement and progression."}
         ],
         "videos": [
             {"title": "Full Gameplay Walkthrough", "url": "https://www.youtube.com/embed/EDXKdE1kVC8"}
