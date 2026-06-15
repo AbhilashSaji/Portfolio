@@ -362,7 +362,7 @@
             opacity: 1 !important;
         }
 
-        /* Added cyanBlue tag color */
+        /* --- FIXED: ALL TAG COLORS INCULDING CYANBLUE --- */
         .tag-green { border: 1px solid #00ff66; color: #00ff66; }
         .tag-purple { border: 1px solid #bb55ff; color: #bb55ff; }
         .tag-blue { border: 1px solid #33a6ff; color: #33a6ff; }
@@ -404,7 +404,7 @@
             gap: 8px;
         }
 
-        /* Added cyanBlue icon color */
+        /* --- FIXED: ALL ICON COLORS INCLUDING CYANBLUE --- */
         .theme-icon { font-size: 1.1rem; }
         .color-green { color: #00ff66; }
         .color-purple { color: #bb55ff; }
@@ -597,6 +597,7 @@
             margin-bottom: 30px;
         }
 
+        /* --- FIXED: HIRE ME BUTTON GLOW & HIGHLIGHT EFFECT --- */
         .btn-hire {
             background: var(--primary-green);
             color: var(--bg-dark);
@@ -607,6 +608,14 @@
             align-items: center;
             gap: 10px;
             width: fit-content;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.3); /* Base Glow */
+            transition: all 0.3s ease;
+        }
+
+        .btn-hire:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.6); /* Highlight Hover Glow */
+            transform: translateY(-2px);
         }
 
         /* --- SERVICES SECTION --- */
@@ -857,7 +866,7 @@
         </div>
         <nav>
             <ul id="navbar-links-list">
-                <li><a href="#" class="nav-anchor active" data-target="home">Home</a></li>
+                <li><a href="#home" class="nav-anchor active" data-target="home">Home</a></li>
                 <li><a href="#projects" class="nav-anchor" data-target="projects">Projects</a></li>
                 <li><a href="#skills" class="nav-anchor" data-target="skills">Skills</a></li>
                 <li><a href="#contact" class="nav-anchor" data-target="contact">Contact</a></li>
