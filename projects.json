@@ -6,7 +6,7 @@
         "tagColor": "green",
         "category": "platformer",
         "image": "Images/Pixel-Forest-Adventure/PixelForestThumbnail.png",
-        "desc": "A 2D platformer with collectible mechanics, level progression, score tracking and sound effects.",
+        "desc": "A 2D platformer with collectible-based progression, score tracking, immersive sound design, and carefully crafted levels that encourage exploration and skillful gameplay.",
         "tech": ["Unity", "C#", "2D"],
         "isHighlighted": true,
         "year": "2025",
