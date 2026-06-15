@@ -9,13 +9,12 @@
     
     <style>
         :root {
-            /* --- RESTORED BLACK & DARK THEME --- */
             --bg-dark: #02080c;
-            --bg-card: rgba(0, 0, 0, 0.65); /* Pure black transparent boxes */
+            --bg-card: rgba(0, 0, 0, 0.65); 
             --primary-green: #00ff66; 
             --text-main: #ffffff;
             --text-muted: #8da4ae;
-            --border-color: rgba(0, 255, 102, 0.15); /* Green subtle borders */
+            --border-color: rgba(0, 255, 102, 0.15); 
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,31 +31,23 @@
         
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
-        /* --- BACKGROUND MANAGEMENT --- */
+        /* --- BACKGROUND --- */
         #dynamic-bg-blur {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: blur(15px) brightness(0.25);
-            transform: scale(1.05);
-            z-index: -2;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            filter: blur(15px) brightness(0.25); transform: scale(1.05); z-index: -2;
             transition: background-image 0.5s ease;
         }
 
-        #particles-js {
-            position: fixed;
-            width: 100%; height: 100vh;
-            top: 0; left: 0; z-index: -1;
-            pointer-events: none;
-        }
+        #particles-js { position: fixed; width: 100%; height: 100vh; top: 0; left: 0; z-index: -1; pointer-events: none; }
 
-        /* --- NAVIGATION HEADER --- */
+        /* --- HEADER (With Home Button) --- */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 14px 6%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(16px);
-            position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-color);
+            padding: 14px 6%; background: rgba(2, 8, 12, 0.85); backdrop-filter: blur(16px);
+            position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
+        .header-left { display: flex; align-items: center; gap: 15px; }
         .logo { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 1.5px; }
         .logo i { color: var(--primary-green); }
         
@@ -64,95 +55,100 @@
             border: 1px solid var(--primary-green); background: rgba(0, 255, 102, 0.05); color: var(--primary-green);
             padding: 8px 18px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
         }
-        .btn-go-back-nav:hover { background: var(--primary-green); color: #000; box-shadow: 0 0 15px rgba(0,255,102,0.3); }
+        .btn-go-back-nav:hover { background: var(--primary-green); color: var(--bg-dark); box-shadow: 0 0 15px rgba(0,255,102,0.3); }
+        .btn-home { padding: 8px 14px; font-size: 0.9rem; } /* Icon specific padding */
 
-        /* --- BENTO GRID LAYOUT CONTAINER --- */
+        /* --- BENTO CONTAINER --- */
         .bento-container { max-width: 1400px; margin: 0 auto; padding: 20px 6% 60px; position: relative; z-index: 5; }
 
         /* HERO TOP SECTION */
         .hero-bento { display: grid; grid-template-columns: 1fr 1.2fr; gap: 25px; margin-bottom: 25px; align-items: stretch; }
-        
         .hero-left-card { display: flex; flex-direction: column; justify-content: center; }
-        .proj-tag-badge { border-radius: 4px; font-size: 0.65rem; padding: 6px 12px; font-weight: 700; text-transform: uppercase; width: fit-content; margin-bottom: 15px; border: 1px solid var(--primary-green); color: var(--primary-green); background: rgba(0,255,102,0.05); letter-spacing: 1px; }
-        .proj-title { font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 900; text-transform: uppercase; color: #ffffff; margin-bottom: 15px; line-height: 1.1; display: flex; align-items: center; gap: 15px; }
+        .proj-tag-badge { border-radius: 4px; font-size: 0.65rem; padding: 4px 10px; font-weight: 700; text-transform: uppercase; width: fit-content; margin-bottom: 15px; border: 1px solid var(--primary-green); color: var(--primary-green); background: rgba(0,0,0,0.4); }
+        .proj-title { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: 900; text-transform: uppercase; color: #ffffff; margin-bottom: 15px; line-height: 1.1; display: flex; align-items: center; gap: 15px; }
         .brief-text-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; max-width: 95%; }
         
         .hero-action-row { display: flex; gap: 15px; margin-bottom: 30px; }
-        
-        .btn-main-play { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 14px 28px; border-radius: 6px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; background: var(--primary-green); color: #000; border: none; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(0, 255, 102, 0.2); }
+        .btn-main-play { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 14px 28px; border-radius: 6px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; background: var(--primary-green); color: var(--bg-dark); border: none; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(0, 255, 102, 0.2); }
         .btn-main-play:hover { box-shadow: 0 0 25px rgba(0, 255, 102, 0.5); transform: translateY(-2px); }
 
-        /* Mini Features Row in Hero */
-        .mini-features-row { display: flex; gap: 12px; flex-wrap: wrap; }
-        .mini-feature-box { background: var(--bg-card); border: 1px solid var(--border-color); padding: 15px 12px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex: 1; min-width: 80px; text-align: center; }
-        .mini-feature-box i { font-size: 1.4rem; color: var(--primary-green); }
-        .mini-feature-box span { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; line-height: 1.3; }
+        /* Mini Features Row */
+        .mini-features-row { display: flex; gap: 15px; flex-wrap: wrap; }
+        .mini-feature-box { background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 90px; text-align: center; }
+        .mini-feature-box i { font-size: 1.2rem; color: var(--primary-green); }
+        .mini-feature-box span { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; line-height: 1.2; }
 
-        /* --- STEAM MEDIA SLIDER (16:9 Ratio Applied) --- */
+        /* STEAM MEDIA SLIDER */
         .steam-media-wrapper { display: flex; flex-direction: column; gap: 12px; }
-        .video-player-frame { width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: #000; overflow: hidden; border: 1px solid var(--border-color); position: relative; }
+        .video-player-frame { width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 8px; background: #000; overflow: hidden; border: 1px solid var(--border-color); position: relative; }
         .video-player-frame iframe, .video-player-frame img { width: 100%; height: 100%; border: none; object-fit: cover; }
         
-        .slider-relative-tray { position: relative; display: flex; align-items: center; width: 100%; padding: 0 40px; }
+        .slider-relative-tray { position: relative; display: flex; align-items: center; width: 100%; padding: 0 35px; }
         .steam-thumbnail-slider { display: flex; gap: 10px; overflow-x: hidden; scroll-behavior: smooth; width: 100%; }
-        .steam-thumb { flex: 0 0 calc(25% - 8px); aspect-ratio: 16 / 9; border: 2px solid rgba(0, 255, 102, 0.1); border-radius: 8px; overflow: hidden; cursor: pointer; position: relative; background: #000; opacity: 0.5; transition: 0.3s; }
+        .steam-thumb { flex: 0 0 calc(20% - 8px); height: 60px; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; cursor: pointer; position: relative; background: #000; opacity: 0.5; transition: 0.3s; }
         .steam-thumb:hover, .steam-thumb.active { opacity: 1; border-color: var(--primary-green); }
         .steam-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .steam-thumb-overlay-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--primary-green); font-size: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
-        .slider-arrow { background: var(--bg-card); border: 1px solid var(--border-color); color: #ffffff; position: absolute; top: 0; bottom: 0; width: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 20; font-size: 0.9rem; border-radius: 8px; transition: 0.3s; }
+        .steam-thumb-overlay-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--primary-green); font-size: 1.2rem; }
+        .slider-arrow { background: rgba(2, 8, 12, 0.9); border: 1px solid var(--border-color); color: #ffffff; position: absolute; top: 0; bottom: 0; width: 25px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 20; font-size: 0.8rem; height: 60px; border-radius: 6px; }
         .slider-arrow:hover { color: var(--primary-green); border-color: var(--primary-green); }
         .arrow-left { left: 0; }
         .arrow-right { right: 0; }
 
-        /* --- NEW BENTO MAIN GRID --- */
-        .bento-main-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 25px; align-items: start; margin-bottom: 25px;}
+        /* --- BENTO MAIN GRID --- */
+        .bento-main-grid { display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 25px; align-items: start; margin-bottom: 25px;}
         
-        .bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; backdrop-filter: blur(12px); }
-        .bento-card-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: var(--primary-green); margin-bottom: 20px; letter-spacing: 1px; }
-        
-        .bento-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0; }
+        .bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; backdrop-filter: blur(8px); }
+        .bento-card-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: #ffffff; margin-bottom: 20px; letter-spacing: 0.5px; border-bottom: 1px solid rgba(0, 255, 102, 0.2); padding-bottom: 12px; }
+        .bento-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 15px; }
 
-        /* Features List */
-        .feature-list-check { list-style: none; display: flex; flex-direction: column; gap: 15px; }
-        .feature-list-check li { display: flex; align-items: start; gap: 12px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-        .feature-list-check li i { color: var(--primary-green); font-size: 1.1rem; margin-top: 2px; }
-        .feature-list-check li strong { color: #fff; }
+        /* Features */
+        .feature-list-check { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .feature-list-check li { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-muted); }
+        .feature-list-check li i { color: var(--text-main); font-size: 0.6rem; }
 
-        /* Technical Highlights Grid (2x2 inside card) */
-        .tech-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .highlight-item { border: 1px solid rgba(0, 255, 102, 0.1); background: rgba(0, 0, 0, 0.4); padding: 20px; border-radius: 10px; display: flex; gap: 15px; align-items: flex-start; transition: 0.3s; }
-        .highlight-item:hover { border-color: rgba(0, 255, 102, 0.3); background: rgba(0, 255, 102, 0.02); }
-        .highlight-item i { font-size: 1.8rem; color: var(--primary-green); }
-        .highlight-item h5 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; color: #fff; margin-bottom: 6px; }
-        .highlight-item p { font-size: 0.8rem; margin-bottom: 0; line-height: 1.5; color: var(--text-muted); }
-
-        /* Challenges List */
-        .challenges-list { display: flex; flex-direction: column; gap: 12px; }
-        .challenge-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; background: rgba(0, 0, 0, 0.4); padding: 18px 20px; border-radius: 10px; border: 1px solid rgba(0, 255, 102, 0.1); }
-        .challenge-row p { margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
-        .challenge-row p span { color: #fff; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; display: block; margin-bottom: 5px; color: var(--primary-green); letter-spacing: 0.5px;}
-        .c-arrow { color: var(--text-muted); font-size: 1rem; }
-
-        /* Project Metrics (Full Width Bottom Card) */
-        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .metric-box { text-align: center; border-right: 1px solid rgba(0, 255, 102, 0.15); padding: 10px 0; }
+        /* Metrics Grid */
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .metric-box { text-align: center; border-right: 1px solid rgba(0, 255, 102, 0.15); }
         .metric-box:last-child { border: none; }
-        .metric-box h3 { font-family: 'Orbitron', sans-serif; font-size: 2rem; color: #fff; margin-bottom: 8px; }
-        .metric-box p { font-size: 0.8rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+        .metric-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: #fff; margin-bottom: 5px; }
+        .metric-box p { font-size: 0.75rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-green); font-weight: 700; }
 
-        /* Bottom CTA Bar */
-        .bottom-cta-bar { background: var(--bg-card); backdrop-filter: blur(12px); border: 1px solid var(--border-color); border-radius: 12px; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
-        .cta-quote { display: flex; gap: 20px; align-items: flex-start; }
-        .cta-quote i { font-size: 2.5rem; color: var(--primary-green); /* Green Quote Maintained */ } 
-        .cta-quote p { font-size: 1.2rem; color: #fff; font-style: italic; max-width: 450px; line-height: 1.5; margin:0; }
+        /* Tech Highlights */
+        .tech-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .highlight-item { border: 1px solid rgba(0, 255, 102, 0.1); background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; display: flex; gap: 15px; align-items: center; }
+        .highlight-item i { font-size: 1.5rem; color: var(--text-muted); }
+        .highlight-item h5 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: #fff; margin-bottom: 4px; }
+        .highlight-item p { font-size: 0.75rem; margin-bottom: 0; line-height: 1.4; color: var(--text-muted); }
+
+        /* Challenges */
+        .challenges-list { display: flex; flex-direction: column; gap: 10px; }
+        .challenge-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 15px; align-items: center; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; border: 1px solid rgba(0, 255, 102, 0.1); }
+        .challenge-row p { margin: 0; font-size: 0.8rem; color: var(--text-muted); }
+        .challenge-row p strong { color: #fff; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; display: block; margin-bottom: 3px;}
+        .c-arrow { color: var(--primary-green); font-size: 0.8rem; }
+
+        /* Bottom CTA */
+        .bottom-cta-bar { background: var(--bg-card); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
+        .cta-quote { display: flex; gap: 15px; align-items: center; }
+        .cta-quote i { font-size: 2rem; color: var(--primary-green); } 
+        .cta-quote p { font-size: 1.1rem; color: #fff; font-style: italic; max-width: 400px; line-height: 1.4; margin:0; }
         
-        .cta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-        .cta-links span { font-size: 0.9rem; color: var(--text-main); }
+        .cta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .cta-links span { font-size: 0.85rem; color: var(--text-muted); }
         .link-row { display: flex; gap: 15px; }
-        .link-row a { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #fff; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .link-row a { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #fff; background: rgba(0,0,0,0.3); padding: 8px 16px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .link-row a:hover { background: rgba(0,255,102,0.1); border-color: var(--primary-green); color: var(--primary-green); }
 
-        /* Tag Colors Updated */
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            display: none; position: fixed; bottom: 30px; right: 30px; z-index: 999; 
+            border: 1px solid var(--primary-green); background-color: var(--bg-card);
+            color: var(--primary-green); cursor: pointer; padding: 12px 16px; border-radius: 8px;
+            font-size: 1.2rem; transition: 0.3s; backdrop-filter: blur(8px);
+        }
+        #scrollToTopBtn:hover { background-color: var(--primary-green); color: var(--bg-dark); box-shadow: 0 0 15px rgba(0,255,102,0.4); transform: translateY(-3px); }
+
+        /* Tag Colors */
         .tag-green { border: 1px solid #00ff66; color: #00ff66; }
         .tag-cyanBlue { border: 1px solid #00d4ff; color: #00d4ff; }
         .color-cyanBlue { color: #00d4ff; }
@@ -160,14 +156,12 @@
         @media (max-width: 1024px) {
             .hero-bento, .bento-main-grid { grid-template-columns: 1fr; }
             .tech-highlights-grid { grid-template-columns: 1fr; }
-            .challenge-row { grid-template-columns: 1fr; text-align: left; gap: 10px; }
+            .challenge-row { grid-template-columns: 1fr; text-align: center; }
             .c-arrow { display: none; }
-            .bottom-cta-bar { flex-direction: column; text-align: center; gap: 25px; align-items: center; }
-            .cta-quote { flex-direction: column; align-items: center; text-align: center; }
+            .bottom-cta-bar { flex-direction: column; text-align: center; gap: 20px; }
             .cta-links { align-items: center; }
             .metrics-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-            .metric-box { border: none; border-bottom: 1px solid rgba(0,255,102,0.15); padding-bottom: 15px; }
-            .metric-box:nth-last-child(-n+2) { border-bottom: none; }
+            .metric-box { border: none; }
         }
     </style>
 </head>
@@ -177,13 +171,18 @@
     <div id="particles-js"></div>
 
     <header>
-        <div class="logo"><i class="fa-solid fa-gamepad"></i> ABHILASH SAJI</div>
+        <div class="header-left">
+            <a href="index.html" class="btn-go-back-nav btn-home" title="Go to Home"><i class="fa-solid fa-house"></i></a>
+            <div class="logo"><i class="fa-solid fa-gamepad"></i> ABHILASH SAJI</div>
+        </div>
         <a href="projects.html" class="btn-go-back-nav">Back to Projects</a>
     </header>
 
     <main class="bento-container" id="details-root">
         <div style="color: var(--text-main); font-size: 0.9rem; text-align: center; padding: 120px 0; font-family: 'Orbitron', sans-serif;">Loading project configurations...</div>
     </main>
+    
+    <button id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -199,6 +198,19 @@
             },
             "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
             "retina_detect": true
+        });
+
+        // Scroll to Top Logic
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -222,11 +234,55 @@
                     let chosenColor = proj.tagColor || "green";
                     let tagClass = `tag-${chosenColor}`;
                     let iconColorClass = `color-${chosenColor}`;
+                    let fallbackIcon = proj.category === "platformer" ? "fa-solid fa-tree" : "fa-solid fa-bolt";
 
-                    let fallbackIcon = "fa-solid fa-bolt";
-                    if(proj.category === "platformer") fallbackIcon = "fa-solid fa-tree";
+                    // JSON Controlled Button
+                    let heroBtnMarkup = '';
+                    if (proj.heroBtn) {
+                        heroBtnMarkup = `<a href="${proj.heroBtn.url || '#'}" target="_blank" class="btn-main-play"><i class="${proj.heroBtn.icon || 'fa-solid fa-gamepad'}"></i> ${proj.heroBtn.text || 'Play Demo'}</a>`;
+                    } else if (proj.liveDemo) {
+                        heroBtnMarkup = `<a href="${proj.liveDemo}" target="_blank" class="btn-main-play"><i class="fa-solid fa-gamepad"></i> Play Demo</a>`;
+                    }
 
-                    // Map Features to Mini Row under Description
+                    // --- NEW MEDIA LOGIC (Image 1st, then Video, then rest of images) ---
+                    let mediaList = [];
+                    if (proj.gallery && proj.gallery.length > 0) {
+                        mediaList.push({ type: 'image', url: proj.gallery[0] });
+                    }
+                    if (proj.videos && proj.videos.length > 0) {
+                        proj.videos.forEach(v => mediaList.push({ type: 'video', url: v.url }));
+                    }
+                    if (proj.gallery && proj.gallery.length > 1) {
+                        for(let i = 1; i < proj.gallery.length; i++) {
+                            mediaList.push({ type: 'image', url: proj.gallery[i] });
+                        }
+                    }
+
+                    let sliderThumbsMarkup = '';
+                    let initialMainMedia = '';
+
+                    mediaList.forEach((media, idx) => {
+                        let isActive = idx === 0 ? 'active' : '';
+                        let overlayIcon = media.type === 'video' ? '<div class="steam-thumb-overlay-icon"><i class="fa-solid fa-play"></i></div>' : '';
+                        let thumbImg = media.type === 'video' ? proj.image : media.url;
+
+                        sliderThumbsMarkup += `
+                            <div class="steam-thumb ${isActive}" data-index="${idx}" onclick="switchSteamMedia('${media.type}', '${media.url}', this)">
+                                ${overlayIcon}
+                                <img src="${thumbImg}">
+                            </div>
+                        `;
+
+                        if (idx === 0) {
+                            if (media.type === 'video') {
+                                initialMainMedia = `<iframe id="steam-iframe-target" src="${media.url}" allowfullscreen></iframe>`;
+                            } else {
+                                initialMainMedia = `<img src="${media.url}" onerror="this.src='https://via.placeholder.com/1920x1080/041219/ffffff'">`;
+                            }
+                        }
+                    });
+
+                    // Features Map
                     const miniFeaturesMarkup = proj.features ? proj.features.map(f => `
                         <div class="mini-feature-box">
                             <i class="${f.icon}"></i>
@@ -234,88 +290,52 @@
                         </div>
                     `).join('') : '';
 
-                    // Key Features List
                     const listFeaturesMarkup = proj.features ? proj.features.map(f => `
-                        <li><i class="fa-regular fa-circle-check"></i> <div><strong>${f.title}</strong><br>${f.desc}</div></li>
+                        <li><i class="fa-solid fa-circle"></i> <strong>${f.title}</strong> - ${f.desc}</li>
                     `).join('') : '<li>No features listed.</li>';
 
-                    // Media Slider Map
-                    let sliderThumbsMarkup = '';
-                    let thumbIndex = 0;
-                    if (proj.videos) {
-                        proj.videos.forEach((v) => {
-                            sliderThumbsMarkup += `
-                                <div class="steam-thumb ${thumbIndex === 0 ? 'active' : ''}" data-index="${thumbIndex}" onclick="switchSteamMedia('video', '${v.url}', this)">
-                                    <div class="steam-thumb-overlay-icon"><i class="fa-solid fa-play"></i></div>
-                                    <img src="${proj.image}">
-                                </div>
-                            `;
-                            thumbIndex++;
-                        });
-                    }
-                    if (proj.gallery) {
-                        proj.gallery.forEach(img => {
-                            sliderThumbsMarkup += `
-                                <div class="steam-thumb" data-index="${thumbIndex}" onclick="switchSteamMedia('image', '${img}', this)">
-                                    <img src="${img}">
-                                </div>
-                            `;
-                            thumbIndex++;
-                        });
-                    }
+                    // Metrics Map
+                    let metaMetricsHTML = proj.metaInfo ? proj.metaInfo.map(m => `
+                        <div class="metric-box">
+                            <h3>${m.value.split(' ')[0]}</h3>
+                            <p>${m.label}</p>
+                        </div>
+                    `).join('') : '';
 
-                    // Dynamic Metrics (Full width card bottom)
-                    let metaMetricsHTML = '';
-                    if(proj.metaInfo) {
-                        metaMetricsHTML = proj.metaInfo.map(m => `
-                            <div class="metric-box">
-                                <h3>${m.value.split(' ')[0]}</h3>
-                                <p>${m.label}</p>
+                    // Tech Highlights Map
+                    let techHighlightsHTML = proj.techHighlights ? proj.techHighlights.map(m => `
+                        <div class="highlight-item">
+                            <i class="fa-solid ${m.icon}"></i>
+                            <div>
+                                <h5>${m.title}</h5>
+                                <p>${m.desc}</p>
                             </div>
-                        `).join('');
-                    } else {
-                        metaMetricsHTML = `<div class="metric-box"><h3>${proj.year}</h3><p>Year</p></div><div class="metric-box"><h3>${proj.platform}</h3><p>Platform</p></div>`;
-                    }
+                        </div>
+                    `).join('') : '<p>No technical highlights available.</p>';
 
-                    // Technical Highlights Grid
-                    let techHighlightsHTML = '';
-                    if(proj.techHighlights) {
-                        techHighlightsHTML = proj.techHighlights.map(m => `
-                            <div class="highlight-item">
-                                <i class="fa-solid ${m.icon}"></i>
-                                <div>
-                                    <h5>${m.title}</h5>
-                                    <p>${m.desc}</p>
-                                </div>
-                            </div>
-                        `).join('');
-                    }
+                    // Challenges Map
+                    let challengesHTML = proj.challenges ? proj.challenges.map(c => `
+                        <div class="challenge-row">
+                            <p><strong>Challenge:</strong> ${c.challenge}</p>
+                            <i class="fa-solid fa-chevron-right c-arrow"></i>
+                            <p><strong>Solution:</strong> ${c.solution}</p>
+                        </div>
+                    `).join('') : '<p>No challenges documented.</p>';
 
-                    // Challenges List
-                    let challengesHTML = '';
-                    if(proj.challenges) {
-                        challengesHTML = proj.challenges.map(c => `
-                            <div class="challenge-row">
-                                <p><span>Challenge:</span> ${c.challenge}</p>
-                                <i class="fa-solid fa-chevron-right c-arrow"></i>
-                                <p><span>Solution:</span> ${c.solution}</p>
-                            </div>
-                        `).join('');
-                    }
-
-                    // Dynamic CTA Links (Removing Github dynamically)
+                    // CTA Links Map
                     let ctaLinksHTML = '';
                     let ctaQuote = "Building fun, optimized and scalable games that players love.";
                     if(proj.cta) {
-                        ctaQuote = proj.cta.quote;
-                        ctaLinksHTML = proj.cta.links.filter(l => l.text.toLowerCase() !== 'github').map(l => `
-                            <a href="${l.url}" target="_blank"><i class="fa-brands ${l.icon}" style="color:${l.iconColor}"></i> ${l.text}</a>
+                        ctaQuote = proj.cta.quote || ctaQuote;
+                        ctaLinksHTML = proj.cta.links.map(l => `
+                            <a href="${l.url}" target="_blank">
+                                <i class="${l.icon}" style="color:${l.iconColor}"></i> ${l.text}
+                            </a>
                         `).join('');
                     }
 
-                    // Generate Full HTML Layout
+                    // Render Full Layout
                     document.getElementById('details-root').innerHTML = `
-                        
                         <div class="hero-bento">
                             <div class="hero-left-card">
                                 <span class="proj-tag-badge ${tagClass}">${proj.tag}</span>
@@ -323,7 +343,7 @@
                                 <p class="brief-text-desc">${proj.desc}</p>
                                 
                                 <div class="hero-action-row">
-                                    <a href="${proj.liveDemo || '#'}" target="_blank" class="btn-main-play"><i class="fa-solid fa-gamepad"></i> Play Demo (APK)</a>
+                                    ${heroBtnMarkup}
                                 </div>
 
                                 <div class="mini-features-row">
@@ -333,7 +353,7 @@
                             
                             <div class="steam-media-wrapper">
                                 <div class="video-player-frame" id="steam-main-viewport">
-                                    <iframe id="steam-iframe-target" src="${proj.videoUrl || ''}" allowfullscreen></iframe>
+                                    ${initialMainMedia}
                                 </div>
                                 <div class="slider-relative-tray">
                                     <button class="slider-arrow arrow-left" onclick="slideSteamTray('left')"><i class="fa-solid fa-chevron-left"></i></button>
@@ -346,7 +366,6 @@
                         </div>
 
                         <div class="bento-main-grid">
-                            
                             <div style="display:flex; flex-direction:column; gap:25px;">
                                 <div class="bento-card">
                                     <h3 class="bento-card-title">Project Overview</h3>
@@ -359,31 +378,29 @@
                                         ${listFeaturesMarkup}
                                     </ul>
                                 </div>
+                                
+                                <div class="bento-card">
+                                    <h3 class="bento-card-title">Project Metrics</h3>
+                                    <div class="metrics-grid">
+                                        ${metaMetricsHTML}
+                                    </div>
+                                </div>
                             </div>
 
                             <div style="display:flex; flex-direction:column; gap:25px;">
-                                ${techHighlightsHTML ? `
                                 <div class="bento-card">
                                     <h3 class="bento-card-title">Technical Highlights</h3>
                                     <div class="tech-highlights-grid">
                                         ${techHighlightsHTML}
                                     </div>
-                                </div>` : ''}
+                                </div>
 
-                                ${challengesHTML ? `
                                 <div class="bento-card">
                                     <h3 class="bento-card-title">Challenges & Solutions</h3>
                                     <div class="challenges-list">
                                         ${challengesHTML}
                                     </div>
-                                </div>` : ''}
-                            </div>
-                        </div>
-
-                        <div class="bento-card" style="margin-bottom: 25px;">
-                            <h3 class="bento-card-title">Project Metrics</h3>
-                            <div class="metrics-grid">
-                                ${metaMetricsHTML}
+                                </div>
                             </div>
                         </div>
 
@@ -404,7 +421,7 @@
                 .catch(err => console.error("Error launching dynamic system layouts:", err));
         }
 
-        // --- AUTO-SLIDE ON IMAGE SELECTION ---
+        // --- AUTO-SLIDE & MEDIA SWITCHER ---
         function switchSteamMedia(type, path, elementRef) {
             document.querySelectorAll('.steam-thumb').forEach(el => el.classList.remove('active'));
             elementRef.classList.add('active');
