@@ -147,21 +147,57 @@
         .coin-icon-shell i { font-size: 1.15rem; color: #ffffff; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)); position: relative; z-index: 5; }
 
         /* Juicy Pop Tone Color Configuration mapping per item modules */
-        .card-item-1 { --casual-top: #ffcc00; --casual-bottom: #ff9900; --casual-shadow: rgba(255, 153, 0, 0.4); } /* Sun Gold */
-        .card-item-2 { --casual-top: #00ffbc; --casual-bottom: #00b395; --casual-shadow: rgba(0, 255, 188, 0.3); } /* Neon Mint */
-        .card-item-3 { --casual-top: #ff4d79; --casual-bottom: #ff0044; --casual-shadow: rgba(255, 0, 68, 0.35); } /* Pop Candy Pink */
-        .card-item-4 { --casual-top: #33ccff; --casual-bottom: #0088cc; --casual-shadow: rgba(51, 204, 255, 0.3); } /* Soda Blue */
-        .card-item-5 { --casual-top: #bb55ff; --casual-bottom: #8800cc; --casual-shadow: rgba(187, 85, 255, 0.3); }/* Jelly Purple */
-        .card-item-6 { --casual-top: #a6ff00; --casual-bottom: #73cc00; --casual-shadow: rgba(166, 255, 0, 0.3); } /* Lime Smash */
+        .card-profile-1 { --casual-top: #ffcc00; --casual-bottom: #ff9900; --casual-shadow: rgba(255, 153, 0, 0.4); } /* Sun Gold */
+        .card-profile-2 { --casual-top: #00ffbc; --casual-bottom: #00b395; --casual-shadow: rgba(0, 255, 188, 0.3); } /* Neon Mint */
+        .card-profile-3 { --casual-top: #ff4d79; --casual-bottom: #ff0044; --casual-shadow: rgba(255, 0, 68, 0.35); } /* Pop Candy Pink */
+        .card-profile-4 { --casual-top: #33ccff; --casual-bottom: #0088cc; --casual-shadow: rgba(51, 204, 255, 0.3); } /* Soda Blue */
+        .card-profile-5 { --casual-top: #bb55ff; --casual-bottom: #8800cc; --casual-shadow: rgba(187, 85, 255, 0.3); }/* Jelly Purple */
+        .card-profile-6 { --casual-top: #a6ff00; --casual-bottom: #73cc00; --casual-shadow: rgba(166, 255, 0, 0.3); } /* Lime Smash */
 
         .feature-card-item h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; margin-bottom: 2px; color: #ffffff; letter-spacing: 0.3px; }
         .feature-card-item p { color: var(--text-muted); font-size: 0.72rem; }
+
+        /* --- ADDED CYANBLUE TAG & ICON STYLES --- */
+        .tag-green { border: 1px solid #00ff66; color: #00ff66; }
+        .tag-purple { border: 1px solid #bb55ff; color: #bb55ff; }
+        .tag-blue { border: 1px solid #33a6ff; color: #33a6ff; }
+        .tag-cyanBlue { border: 1px solid #00d4ff; color: #00d4ff; }
+        .tag-orange { border: 1px solid #ff9900; color: #ff9900; }
+        .tag-red { border: 1px solid #ff3344; color: #ff3344; }
+
+        .theme-icon { font-size: 1.1rem; }
+        .color-green { color: #00ff66; }
+        .color-purple { color: #bb55ff; }
+        .color-blue { color: #33a6ff; }
+        .color-cyanBlue { color: #00d4ff; }
+        .color-orange { color: #ff9900; }
+        .color-red { color: #ff3344; }
 
         /* --- FOOTER CTA --- */
         .hire-cta-panel { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(8px); margin-bottom: 20px; margin-top: 10px; }
         .hire-left h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 4px; }
         .hire-left p { color: var(--text-muted); font-size: 0.82rem; }
-        .btn-hire-me { background: var(--primary-green); color: var(--bg-dark); font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 700; padding: 12px 24px; border-radius: 4px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        
+        /* --- FIXED: GLOW EFFECT FOR HIRE ME BUTTON --- */
+        .btn-hire-me { 
+            background: var(--primary-green); 
+            color: var(--bg-dark); 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 0.8rem; 
+            font-weight: 700; 
+            padding: 12px 24px; 
+            border-radius: 4px; 
+            text-transform: uppercase; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-hire-me:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
+            transform: translateY(-2px);
+        }
 
         @media (max-width: 968px) {
             .hero-grid, .overview-row { grid-template-columns: 1fr; }
@@ -225,10 +261,19 @@
 
                     let chosenColor = proj.tagColor || "green";
                     let tagClass = `tag-${chosenColor}`;
+                    let iconColorClass = `color-${chosenColor}`;
 
-                    // Loop through data lists parsing hyper casual squircle tokens successfully
+                    let fallbackIcon = "fa-solid fa-gamepad";
+                    if(proj.category === "platformer") fallbackIcon = "fa-solid fa-tree";
+                    if(proj.category === "metroidvania") fallbackIcon = "fa-solid fa-dungeon";
+                    if(proj.category === "isometric") fallbackIcon = "fa-solid fa-layer-group";
+                    if(proj.category === "fps-tps") fallbackIcon = "fa-solid fa-crosshairs";
+                    if(proj.category === "mobile") fallbackIcon = "fa-solid fa-bolt";
+                    if(proj.category === "simulation") fallbackIcon = "fa-solid fa-car-side";
+                    if(proj.category === "ar-vr") fallbackIcon = "fa-solid fa-vr-cardboard";
+
                     const featuresMarkup = proj.features ? proj.features.map((f, idx) => `
-                        <div class="feature-card-item card-item-${(idx % 6) + 1}">
+                        <div class="feature-card-item card-profile-${(idx % 6) + 1}">
                             <div class="coin-icon-shell">
                                 <i class="${f.icon}"></i>
                             </div>
@@ -270,7 +315,10 @@
                         <div class="hero-grid">
                             <div class="left-meta-panel">
                                 <span class="proj-tag-badge ${tagClass}">${proj.tag}</span>
-                                <h1 class="proj-title">${proj.name}</h1>
+                                <div class="title-row" style="display:flex; justify-content:space-between; align-items:center;">
+                                    <h1 class="proj-title">${proj.name}</h1>
+                                    <i class="${fallbackIcon} ${iconColorClass} theme-icon" style="font-size: 1.8rem;"></i>
+                                </div>
                                 
                                 <div class="game-brief-section">
                                     <div class="brief-thumb-wrapper">
@@ -328,7 +376,7 @@
                                 <h3>Like this project?</h3>
                                 <p>I'm available for freelance contract work. Let's build something amazing together!</p>
                             </div>
-                            <a href="index.html#contact" class="btn-hire-me">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
+                            <a href="mailto:abhilashsaji.dev@gmail.com?subject=Project Inquiry&body=Hi Abhilash,%0D%0AI would like to discuss a project with you." class="btn-hire-me">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
                         </div>
                     `;
                 })
@@ -359,7 +407,6 @@
             }
         }
 
-        // Sideways sliding bar mechanics configuration
         function slideSteamTray(direction) {
             const track = document.getElementById('steam-slider-track');
             const step = track.clientWidth / 2;
