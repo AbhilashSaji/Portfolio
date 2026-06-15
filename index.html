@@ -88,7 +88,7 @@
             gap: 35px;
         }
 
-        nav ul li a {
+        nav nav ul li a {
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -398,7 +398,7 @@
             gap: 8px;
         }
 
-        /* --- REDESIGNED REAL COLOR SKILLS SECTION --- */
+        /* --- SKILLS SECTION --- */
         .skills-display-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -425,7 +425,6 @@
             border-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Specific Real Icons Colors with matching Progress Bar Colors */
         .color-unity { color: #ffffff; filter: drop-shadow(0 0 6px rgba(255,255,255,0.2)); }
         .color-csharp { color: #9B4F96; filter: drop-shadow(0 0 6px rgba(155,79,150,0.3)); }
         .color-gameplay { color: #00ffbc; filter: drop-shadow(0 0 6px rgba(0,255,188,0.3)); }
@@ -476,7 +475,7 @@
             border-radius: 10px;
         }
 
-        /* --- REDESIGNED REAL COLOR TECHNOLOGIES SUB-STACKS --- */
+        /* --- TECHNOLOGIES SUB-STACKS --- */
         .mid-container {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -564,7 +563,7 @@
             width: fit-content;
         }
 
-        /* --- REDESIGNED SERVICES WHAT I DO SECTION --- */
+        /* --- SERVICES SECTION --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -622,7 +621,7 @@
             line-height: 1.6;
         }
 
-        /* --- REDESIGNED REAL COLOR CONTACT SECTION --- */
+        /* --- CONTACT SECTION --- */
         .contact-layout-box {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
@@ -722,7 +721,7 @@
             box-shadow: 0 0 20px var(--glow-color);
         }
 
-        /* 3D Hologram Setup For Right Side Real Color Social Nodes */
+        /* 3D Hologram Setup For Right Side Social Nodes */
         .contact-right-hologram {
             display: flex;
             align-items: center;
@@ -763,7 +762,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Specific Real Brand Colors on Hover for Social Nodes */
         .node-discord { top: 15%; left: 8%; }
         .node-discord:hover { border-color: #5865F2; color: #5865F2; box-shadow: 0 0 15px rgba(88, 101, 242, 0.3); }
         .node-discord i { color: #5865F2; font-size: 1.5rem; }
@@ -780,16 +778,30 @@
         .node-whatsapp:hover { border-color: #25D366; color: #25D366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.3); }
         .node-whatsapp i { color: #25D366; font-size: 1.5rem; }
 
-        /* --- FOOTER --- */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 35px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            background: #02080c;
+        /* --- SCROLL TO TOP BUTTON --- */
+        #scrollToTopBtn {
+            display: none; 
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999; 
+            border: 1px solid var(--primary-green);
+            outline: none;
+            background-color: var(--bg-card);
+            color: var(--primary-green);
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.1);
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: var(--primary-green);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--glow-color);
+            transform: translateY(-3px); 
         }
 
         /* --- RESPONSIVE --- */
@@ -822,7 +834,8 @@
     <!-- NAVIGATION HEADER -->
     <header>
         <div class="logo">
-            <i class="fa-solid fa-gamepad"></i> ABHILASH SAJI
+            <!-- 1. Text changed to UNITY DEVELOPER -->
+            <i class="fa-solid fa-gamepad"></i> UNITY DEVELOPER
         </div>
         <nav>
             <ul>
@@ -843,9 +856,11 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-subtitle">HELLO, I'M</div>
-            <h1 class="hero-title">UNITY<br>DEVELOPER</h1>
+            <!-- 2. Main Title text replaced with ABHILASH SAJI -->
+            <h1 class="hero-title">ABHILASH<br>SAJI</h1>
+            <!-- 3. Hyphen symbol completely removed from the description text below -->
             <p class="hero-description">
-                I build polished Unity games that transform ideas into engaging player experiences — from gameplay systems and UI architecture to optimization and deployment.
+                I build polished Unity games that transform ideas into engaging player experiences from gameplay systems and UI architecture to optimization and deployment.
             </p>
             
             <div class="hero-buttons">
@@ -879,7 +894,7 @@
         </div>
     </section>
 
-    <!-- FEATURED PROJECTS SECTION -->
+    <!-- FEATURED PROJECTS SECTION (FIRST) -->
     <section class="content-section" id="projects">
         <div class="section-subtitle-tag">My Work</div>
         <div class="section-header">
@@ -955,7 +970,7 @@
         </div>
     </section>
 
-    <!-- REAL COLOR SKILLS & EXPERTISE SECTION -->
+    <!-- REAL COLOR SKILLS & EXPERTISE SECTION (SECOND) -->
     <section class="content-section" id="skills">
         <div class="section-subtitle-tag">My Stack</div>
         <div class="section-header">
@@ -1037,7 +1052,7 @@
         </div>
     </section>
 
-    <!-- REAL COLOR TECHNOLOGIES SUB-STACKS -->
+    <!-- REAL COLOR TECHNOLOGIES SECTION -->
     <section class="content-section" style="padding-top: 15px; padding-bottom: 35px;">
         <div class="mid-container">
             <div class="panel">
@@ -1098,7 +1113,7 @@
         </div>
     </section>
 
-    <!-- SERVICES MODULE -->
+    <!-- SERVICES MODULE (WHAT I DO) -->
     <section class="content-section" id="services" style="padding-top: 15px; padding-bottom: 50px;">
         <div class="section-header">
             <h2 class="section-title" style="font-size: 1.25rem;">What I Do</h2>
@@ -1216,6 +1231,9 @@
         <div>Let's Build Something Amazing Together! 🚀</div>
     </footer>
 
+    <!-- SCROLL TO TOP BUTTON -->
+    <button id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
     <!-- PARTICLES.JS ENGINE LOADING AND CONFIGURATION -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -1250,6 +1268,28 @@
             },
             "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
             "retina_detect": true
+        });
+
+        // --- BACK TO TOP CORE LOGIC ---
+        const scrollTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        }
+
+        scrollTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
     </script>
 </body>
