@@ -46,7 +46,7 @@
         "tagColor": "cyanBlue",
         "category": "mobile",
         "image": "Images/Tom-And-Jerry/TomAndJerryThumbnail.png",
-        "desc": "A high-performance mobile endless runner, blending precision mechanics with an immersive, retro-futuristic atmosphere. Features a rewarding, collectible-based progression loop, real-time score tracking, and immersive spatial audio design that creates a high-stakes, just one more run experience.",
+        "desc": "A retro-futuristic endless runner with collectible progression, real-time scoring, immersive audio, optimized mobile performance, and persistent player data.",
         "tech": ["Unity", "C#", "3D", "Audio Mixer", "Mobile Optimization"],
         "isHighlighted": true,
         "year": "2025",
