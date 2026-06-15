@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Projects | Abhilash Saji</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -102,7 +103,7 @@
             line-height: 1.6;
         }
 
-        /* --- FILTER BUTTONS ROW (EXACT THEME MATCH) --- */
+        /* --- FILTER BUTTONS ROW --- */
         .filter-buttons-row {
             display: flex;
             gap: 12px;
@@ -212,7 +213,7 @@
             font-size: 1.1rem;
         }
 
-        /* Hologram Specific Graphics Colors mapping from mockups */
+        /* Neon Icon Colors */
         .color-green { color: #00ff66; }
         .color-purple { color: #bb55ff; }
         .color-blue { color: #33a6ff; }
@@ -227,7 +228,6 @@
             flex-grow: 1;
         }
 
-        /* Generic static pill template to safe-guard empty data fields */
         .tech-badges-row {
             display: flex;
             flex-wrap: wrap;
@@ -358,19 +358,20 @@
     <script>
         let masterProjectsList = [];
 
+        // FIXED THE RES => RES.JSON() FETCH BUG HERE
         fetch('projects.json')
             .then(res => res.json())
             .then(data => {
                 masterProjectsList = data;
                 renderArchiveCards(masterProjectsList);
             })
-            .catch(err => console.error("File tracking diagnostic path update log:", err));
+            .catch(err => console.error("Error loading JSON:", err));
 
         function renderArchiveCards(list) {
             const gridRoot = document.getElementById('archive-grid-root');
             
             gridRoot.innerHTML = list.map(proj => {
-                // Safety logic: JSON-ൽ ടാഗുകൾ ഇല്ലെങ്കിൽ പകരം ഉപയോഗിക്കാനുള്ള ഡിഫോൾട്ട് ടാഗുകൾ
+                // Dynamic fallback stack setup
                 let currentTechStack = proj.tech || ["Unity", "C#", "PC"];
                 if(!proj.tech) {
                     if (proj.id === 1 || proj.id === 10) currentTechStack = ["Unity", "C#", "2D"];
@@ -379,7 +380,7 @@
 
                 const badgesMarkup = currentTechStack.map(t => `<span class="badge-item">${t}</span>`).join('');
 
-                // Safety logic: JSON-ൽ ഐക്കൺ വിവരങ്ങൾ ഇല്ലെങ്കിൽ ടൈറ്റിൽ വെച്ച് ഓട്ടോമാറ്റിക് മാപ്പിങ് ചെയ്യുന്നു
+                // Custom matching mockup icon system
                 let fallbackIcon = "fa-solid fa-gamepad";
                 let lowerTag = proj.tag.toLowerCase();
                 if(lowerTag.includes("platformer") || lowerTag.includes("2d")) fallbackIcon = "fa-solid fa-tree";
@@ -389,7 +390,6 @@
                 if(lowerTag.includes("horror") || lowerTag.includes("survival")) fallbackIcon = "fa-solid fa-ghost";
                 if(lowerTag.includes("rpg") || lowerTag.includes("adventure")) fallbackIcon = "fa-solid fa-compass";
 
-                // Unique color theme allocation per card item matching target lookups
                 let colorClass = "color-green";
                 if (proj.id === 2 || proj.id === 6) colorClass = "color-purple";
                 if (proj.id === 3 || proj.id === 7) colorClass = "color-blue";
@@ -420,7 +420,6 @@
             }).join('');
         }
 
-        // Filtering engine execution logic
         function filterCategory(categoryKey, btnRef) {
             document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
             btnRef.classList.add('active');
@@ -428,7 +427,6 @@
             if(categoryKey === 'all') {
                 renderArchiveCards(masterProjectsList);
             } else {
-                // Dynamic checking on tags since custom categories missing from user json array
                 const filtered = masterProjectsList.filter(p => {
                     let targetTag = p.tag.toLowerCase();
                     if(categoryKey === '2d') return targetTag.includes('2d') || targetTag.includes('platformer');
