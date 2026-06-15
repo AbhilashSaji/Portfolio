@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Abhilash Saji</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #02080c;
+            --bg-card: #041219;
+            --primary-green: #00ff66; 
+            --text-main: #ffffff;
+            --text-muted: #7d9096;
+            --border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; padding-top: 80px; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER NAVIGATION --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 14px 6%; background: rgba(2, 8, 12, 0.85); backdrop-filter: blur(16px);
+            position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .logo { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1px; }
+        .logo i { color: var(--primary-green); }
+        
+        .btn-go-back-nav {
+            border: 1px solid var(--primary-green); background: rgba(0, 255, 102, 0.05); color: var(--primary-green);
+            padding: 8px 18px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+        }
+
+        /* --- MAIN HERO LAYOUT --- */
+        .details-container { max-width: 1400px; margin: 0 auto; padding: 30px 6%; }
+        
+        .back-link { color: var(--primary-green); font-size: 0.75rem; font-family: 'Orbitron', sans-serif; display: flex; align-items: center; gap: 6px; margin-bottom: 20px; font-weight: 700; }
+        
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 1.9fr; gap: 30px; margin-bottom: 30px; }
+        
+        .left-meta-panel { display: flex; flex-direction: column; justify-content: center; }
+        .proj-tag-badge { border-radius: 4px; font-size: 0.65rem; padding: 4px 10px; font-weight: 700; text-transform: uppercase; width: fit-content; margin-bottom: 12px; }
+        
+        .tag-green { border: 1px solid #00ff66; color: #00ff66; }
+        .tag-purple { border: 1px solid #bb55ff; color: #bb55ff; }
+        .tag-blue { border: 1px solid #33a6ff; color: #33a6ff; }
+        .tag-orange { border: 1px solid #ff9900; color: #ff9900; }
+        .tag-red { border: 1px solid #ff3344; color: #ff3344; }
+
+        .proj-title { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 15px; }
+        .proj-desc-main { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px; max-width: 450px; }
+        
+        .meta-dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 30px; }
+        .meta-box { border: 1px solid rgba(255, 255, 255, 0.03); background: rgba(255, 255, 255, 0.01); padding: 10px; border-radius: 6px; }
+        .meta-box span { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px; }
+        .meta-box p { font-family: 'Orbitron', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--text-main); }
+        
+        .action-buttons { display: flex; gap: 15px; }
+        .btn-action { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 700; padding: 12px 24px; border-radius: 4px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; flex: 1; justify-content: center; }
+        .btn-live { background: var(--primary-green); color: var(--bg-dark); }
+        .btn-live:hover { box-shadow: 0 0 15px rgba(0, 255, 102, 0.3); }
+        .btn-source { border: 1px solid rgba(255, 255, 255, 0.15); color: #ffffff; background: rgba(255, 255, 255, 0.02); }
+        .btn-source:hover { border-color: #ffffff; }
+
+        /* --- VIDEO PLAYER BOX --- */
+        .video-player-frame { width: 100%; height: 380px; border: 1px solid var(--border-color); border-radius: 8px; background: #000; overflow: hidden; position: relative; }
+        .video-player-frame iframe { width: 100%; height: 100%; border: none; }
+
+        /* --- LOWER DATA SHELLS --- */
+        .section-headline { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; text-transform: uppercase; border-left: 3px solid var(--primary-green); padding-left: 10px; margin-bottom: 20px; letter-spacing: 0.5px; }
+        
+        .overview-row { display: grid; grid-template-columns: 1.15fr 1.85fr; gap: 30px; margin-bottom: 40px; }
+        .overview-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; }
+        .overview-box p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+        
+        .features-sub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .feature-card-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; display: flex; align-items: center; gap: 15px; }
+        .feature-card-item i { font-size: 1.2rem; color: var(--primary-green); width: 25px; text-align: center; }
+        .feature-card-item h4 { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; margin-bottom: 2px; }
+        .feature-card-item p { color: var(--text-muted); font-size: 0.72rem; }
+
+        /* --- IMAGES & VIDEOS ARCHITECTURE --- */
+        .media-row-grid { display: grid; grid-template-columns: 1.6fr 1.4fr; gap: 30px; margin-bottom: 40px; }
+        
+        .gallery-wrap-box { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .gallery-img-shell { height: 120px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color); }
+        .gallery-img-shell img { width: 100%; height: 100%; object-fit: cover; }
+
+        .playlist-wrap-box { display: flex; flex-direction: column; gap: 10px; }
+        .playlist-item-row { background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px 18px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .playlist-item-row:hover { border-color: var(--primary-green); }
+        .playlist-item-left { display: flex; align-items: center; gap: 12px; }
+        .playlist-item-left i { color: var(--primary-green); font-size: 0.9rem; }
+        .playlist-item-left h5 { font-size: 0.8rem; font-weight: 500; }
+        .playlist-item-right { font-family: 'Orbitron', sans-serif; font-size: 0.7rem; color: var(--text-muted); }
+
+        /* --- HIRE ME CTA --- */
+        .hire-cta-panel { background: linear-gradient(135deg, rgba(4, 18, 25, 0.9), rgba(2, 8, 12, 0.9)); border: 1px solid var(--primary-green); border-radius: 8px; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .hire-left h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; text-transform: uppercase; margin-bottom: 4px; }
+        .hire-left p { color: var(--text-muted); font-size: 0.8rem; }
+        .btn-hire-me { background: var(--primary-green); color: var(--bg-dark); font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 700; padding: 12px 24px; border-radius: 4px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fa-solid fa-gamepad"></i> ABHILASH SAJI</div>
+        <a href="projects.html" class="btn-go-back-nav">Back to Projects</a>
+    </header>
+
+    <main class="details-container" id="details-root">
+        <div style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 100px 0;">Loading project metrics dashboard data...</div>
+    </main>
+
+    <script>
+        // 1. URL-ൽ നിന്നും ഐഡി റീഡ് ചെയ്യുക (e.g. ?id=1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = parseInt(urlParams.get('id'));
+
+        if (!projectId) {
+            document.getElementById('details-root').innerHTML = `<div style="color:red; text-align:center;">No valid project ID specified.</div>`;
+        } else {
+            // 2. JSON ഫയൽ ഫെച്ച് ചെയ്യുക
+            fetch('projects.json')
+                .then(res => res.json())
+                .then(data => {
+                    // ഐഡി മാച്ച് ചെയ്യുന്ന ഗെയിം കണ്ടെത്തുക
+                    const proj = data.find(p => p.id === projectId);
+
+                    if (!proj) {
+                        document.getElementById('details-root').innerHTML = `<div style="color:red; text-align:center;">Project not found inside localized datastore.</div>`;
+                        return;
+                    }
+
+                    // ടാഗ് കളർ മാറ്റാനുള്ള ലോജിക്
+                    let chosenColor = proj.tagColor || "green";
+                    let tagClass = `tag-${chosenColor}`;
+
+                    // ഫീച്ചറുകൾ ഇൻക്രീസ് ചെയ്യാനുള്ള ലൂപ്പ് ലോജിക്
+                    const featuresMarkup = proj.features ? proj.features.map(f => `
+                        <div class="feature-card-item">
+                            <i class="${f.icon}"></i>
+                            <div>
+                                <h4>${f.title}</h4>
+                                <p>${f.desc}</p>
+                            </div>
+                        </div>
+                    `).join('') : '';
+
+                    // ഗാലറി ലൂപ്പ് ലോജിക്
+                    const galleryMarkup = proj.gallery ? proj.gallery.map(img => `
+                        <div class="gallery-img-shell">
+                            <img src="${img}" alt="Gameplay" onerror="this.src='https://via.placeholder.com/250x120/041219/ffffff?text=Gameplay'">
+                        </div>
+                    `).join('') : '';
+
+                    // പ്ലേലിസ്റ്റ് വീഡിയോ ലൂപ്പ് ലോജിക്
+                    const playlistMarkup = proj.videos ? proj.videos.map(v => `
+                        <div class="playlist-item-row" onclick="document.getElementById('main-iframe').src='${v.url}'">
+                            <div class="playlist-item-left">
+                                <i class="fa-regular fa-circle-play"></i>
+                                <h5>${v.title}</h5>
+                            </div>
+                            <div class="playlist-item-right">${v.duration}</div>
+                        </div>
+                    `).join('') : '';
+
+                    // 3. ഫൈനൽ എStructർ എച്ച്ടിഎംഎൽ ഇൻജെക്ഷൻ മാറ്റം
+                    document.getElementById('details-root').innerHTML = `
+                        <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> BACK TO PROJECTS</a>
+                        
+                        <div class="hero-grid">
+                            <div class="left-meta-panel">
+                                <span class="proj-tag-badge ${tagClass}">${proj.tag}</span>
+                                <h1 class="proj-title">${proj.name}</h1>
+                                <p class="proj-desc-main">${proj.desc}</p>
+                                
+                                <div class="meta-dashboard-grid">
+                                    <div class="meta-box"><span>Year</span><p>${proj.year || '2024'}</p></div>
+                                    <div class="meta-box"><span>Platform</span><p>${proj.platform || 'PC'}</p></div>
+                                    <div class="meta-box"><span>Engine</span><p>${proj.engine || 'Unity'}</p></div>
+                                    <div class="meta-box"><span>Role</span><p>${proj.role || 'Developer'}</p></div>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <a href="${proj.liveDemo}" target="_blank" class="btn-action btn-live"><i class="fa-solid fa-play"></i> Play Build</a>
+                                    <a href="${proj.sourceCode}" target="_blank" class="btn-action btn-source"><i class="fa-brands fa-github"></i> Source Code</a>
+                                </div>
+                            </div>
+                            
+                            <div class="video-player-frame">
+                                <iframe id="main-iframe" src="${proj.videoUrl}" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="overview-row">
+                            <div>
+                                <h3 class="section-headline">Project Overview</h3>
+                                <div class="overview-box">
+                                    <p>${proj.overview || 'Project overview details pending...'}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="section-headline">Key Features</h3>
+                                <div class="features-sub-grid">
+                                    ${featuresMarkup || '<div style="color:var(--text-muted)">Features logs are empty.</div>'}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media-row-grid">
+                            <div>
+                                <h3 class="section-headline">Gameplay Images</h3>
+                                <div class="gallery-wrap-box">
+                                    ${galleryMarkup || '<div style="color:var(--text-muted)">No screens added.</div>'}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="section-headline">Gameplay Video</h3>
+                                <div class="playlist-wrap-box">
+                                    ${playlistMarkup || '<div style="color:var(--text-muted)">Playlist is empty.</div>'}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hire-cta-panel">
+                            <div class="hire-left">
+                                <h3>Like this project?</h3>
+                                <p>I'm available for freelance work. Let's bring your ideas to life!</p>
+                            </div>
+                            <a href="index.html#contact" class="btn-hire-me">Hire Me <i class="fa-solid fa-paper-plane"></i></a>
+                        </div>
+                    `;
+                })
+                .catch(err => console.error("Error building details layout panel nodes:", err));
+        }
+    </script>
+</body>
+</html>
