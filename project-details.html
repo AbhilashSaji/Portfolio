@@ -100,20 +100,12 @@
         .bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; backdrop-filter: blur(8px); }
         .bento-card-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: var(--primary-green); margin-bottom: 20px; letter-spacing: 0.5px; border-bottom: 1px solid rgba(0, 255, 102, 0.2); padding-bottom: 12px; }
         .bento-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 15px; }
-        .bento-card p strong { color: var(--text-main); }
 
         /* Features */
         .feature-list-check { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .feature-list-check li { display: flex; align-items: start; gap: 12px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
         .feature-list-check li i { color: var(--primary-green); font-size: 1.1rem; margin-top: 2px; }
         .feature-list-check li strong { color: #fff; }
-
-        /* Metrics Grid */
-        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .metric-box { text-align: center; border-right: 1px solid rgba(0, 255, 102, 0.15); }
-        .metric-box:last-child { border: none; }
-        .metric-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: #fff; margin-bottom: 5px; }
-        .metric-box p { font-size: 0.75rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-green); font-weight: 700; }
 
         /* Tech Highlights */
         .tech-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -129,8 +121,17 @@
         .challenge-row p strong { color: #fff; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; display: block; margin-bottom: 3px;}
         .c-arrow { color: var(--primary-green); font-size: 0.8rem; }
 
+        /* Full Width Metrics Bar */
+        .metrics-full-card { background: var(--bg-card); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px 40px; margin-bottom: 25px; }
+        .metrics-full-card .bento-card-title { border-bottom: none; text-align: center; margin-bottom: 15px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .metric-box { text-align: center; border-right: 1px solid rgba(0, 255, 102, 0.15); padding: 10px 0;}
+        .metric-box:last-child { border: none; }
+        .metric-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.6rem; color: #fff; margin-bottom: 5px; }
+        .metric-box p { font-size: 0.75rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-green); font-weight: 700; }
+
         /* Bottom CTA Bar */
-        .bottom-cta-bar { background: var(--bg-card); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
+        .bottom-cta-bar { background: var(--bg-card); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .cta-quote { display: flex; gap: 15px; align-items: center; }
         .cta-quote i { font-size: 2rem; color: var(--primary-green); } 
         .cta-quote p { font-size: 1.1rem; color: #fff; font-style: italic; max-width: 400px; line-height: 1.4; margin:0; }
@@ -163,7 +164,8 @@
             .bottom-cta-bar { flex-direction: column; text-align: center; gap: 20px; }
             .cta-links { align-items: center; }
             .metrics-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-            .metric-box { border: none; }
+            .metric-box { border: none; border-bottom: 1px solid rgba(0,255,102,0.15); padding-bottom: 15px;}
+            .metric-box:nth-last-child(-n+2) { border-bottom: none; }
         }
     </style>
 </head>
@@ -242,11 +244,9 @@
                     let heroBtnMarkup = '';
                     if (proj.heroBtn) {
                         heroBtnMarkup = `<a href="${proj.heroBtn.url || '#'}" target="_blank" class="btn-main-play"><i class="${proj.heroBtn.icon || 'fa-solid fa-gamepad'}"></i> ${proj.heroBtn.text || 'Play Demo'}</a>`;
-                    } else if (proj.liveDemo) {
-                        heroBtnMarkup = `<a href="${proj.liveDemo}" target="_blank" class="btn-main-play"><i class="fa-solid fa-gamepad"></i> Play Demo</a>`;
                     }
 
-                    // --- NEW MEDIA LOGIC (Image 1st, then Video, then rest of images) ---
+                    // --- MEDIA LOGIC ---
                     let mediaList = [];
                     if (proj.gallery && proj.gallery.length > 0) {
                         mediaList.push({ type: 'image', url: proj.gallery[0] });
@@ -284,22 +284,23 @@
                         }
                     });
 
-                    // Features Map
-                    const miniFeaturesMarkup = proj.features ? proj.features.map(f => `
+                    // Mini Features Map
+                    const miniFeaturesMarkup = proj.miniFeatures ? proj.miniFeatures.map(f => `
                         <div class="mini-feature-box">
                             <i class="${f.icon}"></i>
-                            <span>${f.title.replace(' ', '<br>')}</span>
+                            <span>${f.title}</span>
                         </div>
                     `).join('') : '';
 
-                    const listFeaturesMarkup = proj.features ? proj.features.map(f => `
-                        <li><i class="fa-regular fa-circle-check"></i> <span><strong>${f.title}</strong><br>${f.desc}</span></li>
+                    // Key Features List Map
+                    const listFeaturesMarkup = proj.keyFeatures ? proj.keyFeatures.map(f => `
+                        <li><i class="fa-regular fa-circle-check"></i> <span><strong>${f.title}</strong> - ${f.desc}</span></li>
                     `).join('') : '<li>No features listed.</li>';
 
                     // Metrics Map
                     let metaMetricsHTML = proj.metaInfo ? proj.metaInfo.map(m => `
                         <div class="metric-box">
-                            <h3>${m.value.split(' ')[0]}</h3>
+                            <h3>${m.value}</h3>
                             <p>${m.label}</p>
                         </div>
                     `).join('') : '';
@@ -389,13 +390,6 @@
                                         ${listFeaturesMarkup}
                                     </ul>
                                 </div>
-                                
-                                <div class="bento-card">
-                                    <h3 class="bento-card-title">Project Metrics</h3>
-                                    <div class="metrics-grid">
-                                        ${metaMetricsHTML}
-                                    </div>
-                                </div>
                             </div>
 
                             <div style="display:flex; flex-direction:column; gap:25px;">
@@ -408,6 +402,12 @@
                                 </div>` : ''}
 
                                 ${challengesHTML}
+                            </div>
+                        </div>
+
+                        <div class="metrics-full-card">
+                            <div class="metrics-grid">
+                                ${metaMetricsHTML}
                             </div>
                         </div>
 
@@ -428,7 +428,6 @@
                 .catch(err => console.error("Error launching dynamic system layouts:", err));
         }
 
-        // --- AUTO-SLIDE & MEDIA SWITCHER ---
         function switchSteamMedia(type, path, elementRef) {
             document.querySelectorAll('.steam-thumb').forEach(el => el.classList.remove('active'));
             elementRef.classList.add('active');
