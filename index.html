@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhilash Saji | Unity Developer</title>
+    <!-- Font Awesome for UI Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon for exact Technology Logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -191,7 +194,7 @@
         .btn-primary {
             background: var(--primary-green);
             color: var(--bg-dark);
-            padding: 14px 28px;
+            padding: 14px 30px;
             font-weight: 700;
             border-radius: 4px;
             display: inline-flex;
@@ -202,43 +205,6 @@
 
         .btn-primary:hover {
             box-shadow: 0 0 25px rgba(0, 255, 102, 0.45);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--primary-green);
-            color: var(--primary-green);
-            padding: 14px 28px;
-            font-weight: 600;
-            border-radius: 4px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.85rem;
-            background: rgba(0, 255, 102, 0.03);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-green);
-            color: var(--bg-dark);
-            box-shadow: 0 0 20px var(--glow-color);
-        }
-
-        .btn-resume-hero {
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--text-main);
-            padding: 14px 28px;
-            font-weight: 600;
-            border-radius: 4px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .btn-resume-hero:hover {
-            border-color: var(--text-main);
-            background: rgba(255, 255, 255, 0.08);
         }
 
         /* Focus Areas Dashboard Grid */
@@ -429,7 +395,7 @@
             gap: 8px;
         }
 
-        /* --- EXACT MOCKUP SKILLS SECTION --- */
+        /* --- SKILLS SECTION (EXACT MOCKUP) --- */
         .skills-display-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -639,7 +605,7 @@
             line-height: 1.6;
         }
 
-        /* --- EXACT MOCKUP CONTACT SECTION --- */
+        /* --- CONTACT SECTION (EXACT MOCKUP) --- */
         .contact-layout-box {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
@@ -763,7 +729,7 @@
             background: #041219;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            padding: 10px 15px;
+            padding: 10px 22px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -788,7 +754,8 @@
 
         .node-discord { top: 15%; left: 10%; }
         .node-linkedin { top: 12%; right: 15%; }
-        .node-telegram { bottom: 20%; right: 8%; }
+        /* Replaced Telegram Node with Mail Node */
+        .node-mail { bottom: 20%; right: 8%; }
 
         /* --- FOOTER --- */
         footer {
@@ -819,15 +786,17 @@
             .skills-display-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-right-hologram { height: 300px; margin-top: 40px; }
             header { padding: 20px 4%; }
-            .header-buttons .btn-resume-nav { display: none; } /* Hide nested nav resume item on small devices */
+            .header-buttons .btn-resume-nav { display: none; } 
             footer { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- LIGHTWEIGHT ANIMATED PARTICLES LAYER OVERLAY -->
     <div id="particles-js"></div>
 
+    <!-- NAVIGATION HEADER -->
     <header>
         <div class="logo">
             <i class="fa-solid fa-gamepad"></i> ABHILASH SAJI
@@ -841,11 +810,13 @@
             </ul>
         </nav>
         <div class="header-buttons">
+            <!-- HEADER RESUME DOWNLOAD BUTTON -->
             <a href="YOUR_RESUME_LINK_HERE" download class="btn-resume-nav"><i class="fa-solid fa-file-lines"></i> Resume</a>
             <a href="#contact" class="btn-work">Let's Work Together</a>
         </div>
     </header>
 
+    <!-- HERO SECTION WITH SPREAD ARTWORK -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-subtitle">HELLO, I'M</div>
@@ -855,11 +826,11 @@
             </p>
             
             <div class="hero-buttons">
+                <!-- Contact and Resume buttons removed as per instruction -->
                 <a href="#projects" class="btn-primary">EXPLORE MY WORK <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#contact" class="btn-secondary">CONTACT ME <i class="fa-regular fa-user"></i></a>
-                <a href="YOUR_RESUME_LINK_HERE" download class="btn-resume-hero"><i class="fa-solid fa-download"></i> Resume</a>
             </div>
 
+            <!-- Focus Areas Skill Dashboard Grid -->
             <div class="stats-container">
                 <div class="stat-item">
                     <div class="stat-icon"><i class="fa-solid fa-gamepad"></i></div>
@@ -880,94 +851,22 @@
             </div>
         </div>
 
+        <!-- REPOSITIONED ARTWORK OVERLAY -->
         <div class="hero-graphic-container">
             <img src="Images/bg-main.png" alt="Portal Concept Art" class="bg-main-image">
         </div>
     </section>
 
-    <section class="content-section" id="skills">
-        <div class="section-subtitle-tag">My Skills</div>
-        <div class="section-header">
-            <h2 class="section-title">Skills <span>& Expertise</span></h2>
-            <a href="#projects" class="view-all">VIEW MY WORK <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
-        <div class="skills-display-grid">
-            <div class="skill-expert-card">
-                <div class="skill-expert-icon"><i class="devicon-unity-plain"></i></div>
-                <h4>Unity</h4>
-                <div class="skill-progress-container">
-                    <span class="skill-progress-text">95%</span>
-                    <div class="skill-progress-bar-bg">
-                        <div class="skill-progress-bar-fill" style="width: 95%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-expert-card">
-                <div class="skill-expert-icon"><i class="devicon-csharp-plain"></i></div>
-                <h4>C#</h4>
-                <div class="skill-progress-container">
-                    <span class="skill-progress-text">90%</span>
-                    <div class="skill-progress-bar-bg">
-                        <div class="skill-progress-bar-fill" style="width: 90%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-expert-card">
-                <div class="skill-expert-icon"><i class="fa-solid fa-code"></i></div>
-                <h4>Gameplay Programming</h4>
-                <div class="skill-progress-container">
-                    <span class="skill-progress-text">92%</span>
-                    <div class="skill-progress-bar-bg">
-                        <div class="skill-progress-bar-fill" style="width: 92%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-expert-card">
-                <div class="skill-expert-icon"><i class="fa-solid fa-desktop"></i></div>
-                <h4>UI / UX Design</h4>
-                <div class="skill-progress-container">
-                    <span class="skill-progress-text">88%</span>
-                    <div class="skill-progress-bar-bg">
-                        <div class="skill-progress-bar-fill" style="width: 88%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-expert-card">
-                <div class="skill-expert-icon"><i class="fa-solid fa-gauge-high"></i></div>
-                <h4>Optimization</h4>
-                <div class="skill-progress-container">
-                    <span class="skill-progress-text">85%</span>
-                    <div class="skill-progress-bar-bg">
-                        <div class="skill-progress-bar-fill" style="width: 85%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-expert-card">
-                <div class="skill-expert-icon"><i class="devicon-git-plain"></i></div>
-                <h4>Version Control</h4>
-                <div class="skill-progress-container">
-                    <span class="skill-progress-text">90%</span>
-                    <div class="skill-progress-bar-bg">
-                        <div class="skill-progress-bar-fill" style="width: 90%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- FEATURED PROJECTS SECTION (FIRST NOW) -->
     <section class="content-section" id="projects">
+        <div class="section-subtitle-tag">My Work</div>
         <div class="section-header">
-            <h2 class="section-title">Featured Projects</h2>
-            <a href="#" class="view-all">VIEW ALL PROJECTS <i class="fa-solid fa-arrow-right"></i></a>
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <a href="#contact" class="view-all">LET'S TALK <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="projects-grid">
+            <!-- Project 1 -->
             <div class="project-card">
                 <div class="project-img-wrapper">
                     <span class="project-tag">2D Platformer</span>
@@ -980,6 +879,7 @@
                 </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-img-wrapper">
                     <span class="project-tag">Endless Runner</span>
@@ -992,6 +892,7 @@
                 </div>
             </div>
 
+            <!-- Project 3 -->
             <div class="project-card">
                 <div class="project-img-wrapper">
                     <span class="project-tag">Animated Loading</span>
@@ -1004,6 +905,7 @@
                 </div>
             </div>
 
+            <!-- Project 4 -->
             <div class="project-card">
                 <div class="project-img-wrapper">
                     <span class="project-tag">Vehicle Simulation</span>
@@ -1016,6 +918,7 @@
                 </div>
             </div>
 
+            <!-- Project 5 -->
             <div class="project-card">
                 <div class="project-img-wrapper">
                     <span class="project-tag">Horror Survival</span>
@@ -1030,6 +933,89 @@
         </div>
     </section>
 
+    <!-- SKILLS & EXPERTISE SECTION (PLACED SECOND NOW - VIEW MY WORK LINK REMOVED) -->
+    <section class="content-section" id="skills">
+        <div class="section-subtitle-tag">My Skills</div>
+        <div class="section-header">
+            <h2 class="section-title">Skills <span>& Expertise</span></h2>
+        </div>
+
+        <div class="skills-display-grid">
+            <!-- Skill 1: Unity -->
+            <div class="skill-expert-card">
+                <div class="skill-expert-icon"><i class="devicon-unity-plain"></i></div>
+                <h4>Unity</h4>
+                <div class="skill-progress-container">
+                    <span class="skill-progress-text">95%</span>
+                    <div class="skill-progress-bar-bg">
+                        <div class="skill-progress-bar-fill" style="width: 95%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill 2: C# -->
+            <div class="skill-expert-card">
+                <div class="skill-expert-icon"><i class="devicon-csharp-plain"></i></div>
+                <h4>C#</h4>
+                <div class="skill-progress-container">
+                    <span class="skill-progress-text">90%</span>
+                    <div class="skill-progress-bar-bg">
+                        <div class="skill-progress-bar-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill 3: Gameplay Programming -->
+            <div class="skill-expert-card">
+                <div class="skill-expert-icon"><i class="fa-solid fa-code"></i></div>
+                <h4>Gameplay Programming</h4>
+                <div class="skill-progress-container">
+                    <span class="skill-progress-text">92%</span>
+                    <div class="skill-progress-bar-bg">
+                        <div class="skill-progress-bar-fill" style="width: 92%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill 4: UI/UX Design -->
+            <div class="skill-expert-card">
+                <div class="skill-expert-icon"><i class="fa-solid fa-desktop"></i></div>
+                <h4>UI / UX Design</h4>
+                <div class="skill-progress-container">
+                    <span class="skill-progress-text">88%</span>
+                    <div class="skill-progress-bar-bg">
+                        <div class="skill-progress-bar-fill" style="width: 88%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill 5: Optimization -->
+            <div class="skill-expert-card">
+                <div class="skill-expert-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                <h4>Optimization</h4>
+                <div class="skill-progress-container">
+                    <span class="skill-progress-text">85%</span>
+                    <div class="skill-progress-bar-bg">
+                        <div class="skill-progress-bar-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill 6: Version Control -->
+            <div class="skill-expert-card">
+                <div class="skill-expert-icon"><i class="devicon-git-plain"></i></div>
+                <h4>Version Control</h4>
+                <div class="skill-progress-container">
+                    <span class="skill-progress-text">90%</span>
+                    <div class="skill-progress-bar-bg">
+                        <div class="skill-progress-bar-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UTILITY SEGMENT: TECHNOLOGIES SUB-STACKS -->
     <section class="content-section" style="padding-top: 15px; padding-bottom: 35px;">
         <div class="mid-container">
             <div class="panel">
@@ -1090,6 +1076,7 @@
         </div>
     </section>
 
+    <!-- SERVICES MODULE -->
     <section class="content-section" id="services" style="padding-top: 15px; padding-bottom: 50px;">
         <div class="section-header">
             <h2 class="section-title" style="font-size: 1.25rem;">What I Do</h2>
@@ -1127,21 +1114,26 @@
         </div>
     </section>
 
+    <!-- ADVANCED CONTACT SECTION -->
     <section class="content-section" id="contact" style="padding-top: 30px;">
         <div class="section-subtitle-tag">Let's Work Together</div>
         <div class="contact-layout-box">
             
+            <!-- Left Meta Column -->
             <div class="contact-left-fields">
                 <h2>Contact <span>Me</span></h2>
                 <p class="contact-panel-desc">Have a project idea or want to work together? Feel free to reach out. I'm always open to discussing new opportunities.</p>
                 
                 <div class="info-contact-meta-grid">
+                    <!-- Email -->
                     <div class="meta-info-item">
                         <div class="meta-info-icon-shell"><i class="fa-regular fa-envelope"></i></div>
                         <div class="meta-info-text-shell">
                             <h6>Email</h6>
-                            <p>abhilashsaji@example.com</p> </div>
+                            <p>abhilashsaji@example.com</p> 
+                        </div>
                     </div>
+                    <!-- Location -->
                     <div class="meta-info-item">
                         <div class="meta-info-icon-shell"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="meta-info-text-shell">
@@ -1149,12 +1141,15 @@
                             <p>Kerala, India</p>
                         </div>
                     </div>
+                    <!-- Phone -->
                     <div class="meta-info-item">
                         <div class="meta-info-icon-shell"><i class="fa-solid fa-phone"></i></div>
                         <div class="meta-info-text-shell">
                             <h6>Phone</h6>
-                            <p>+91 98765 43210</p> </div>
+                            <p>+91 98765 43210</p> 
+                        </div>
                     </div>
+                    <!-- Response Time -->
                     <div class="meta-info-item">
                         <div class="meta-info-icon-shell"><i class="fa-regular fa-paper-plane"></i></div>
                         <div class="meta-info-text-shell">
@@ -1164,35 +1159,42 @@
                     </div>
                 </div>
 
+                <!-- Action Mail Trigger Link -->
                 <a href="mailto:abhilashsaji@example.com" class="btn-send-msg">Send Message <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
+            <!-- Right 3D Social Nodes Column -->
             <div class="contact-right-hologram">
                 <div class="hologram-center-mail">
                     <i class="fa-regular fa-envelope"></i>
                 </div>
+                <!-- Discord Node -->
                 <a href="#" target="_blank" class="hologram-social-node node-discord">
                     <i class="fa-brands fa-discord" style="color: #5865F2;"></i>
                     <span>DISCORD</span>
                 </a>
+                <!-- LinkedIn Node -->
                 <a href="#" target="_blank" class="hologram-social-node node-linkedin">
                     <i class="fa-brands fa-linkedin-in" style="color: #0077B5;"></i>
                     <span>LINKEDIN</span>
                 </a>
-                <a href="#" target="_blank" class="hologram-social-node node-telegram">
-                    <i class="fa-brands fa-telegram" style="color: #24A1DE;"></i>
-                    <span>TELEGRAM</span>
+                <!-- REPLACED TELEGRAM WITH MAIL BUTTON NODE -->
+                <a href="mailto:abhilashsaji@example.com" class="hologram-social-node node-mail">
+                    <i class="fa-regular fa-envelope" style="color: var(--primary-green);"></i>
+                    <span>MAIL</span>
                 </a>
             </div>
 
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div>&copy; 2026 Abhilash Saji. All rights reserved.</div>
         <div>Let's Build Something Amazing Together! 🚀</div>
     </footer>
 
+    <!-- PARTICLES.JS ENGINE LOADING AND CONFIGURATION -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
