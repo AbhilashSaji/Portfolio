@@ -11,7 +11,7 @@
         :root {
             /* --- RESTORED ORIGINAL COLOR THEME --- */
             --bg-dark: #02080c;
-            --bg-card: rgba(4, 18, 25, 0.85); /* Deep black transparent */
+            --bg-card: rgba(4, 18, 25, 0.8); /* Deep black transparent */
             --primary-green: #00ff66; /* Original Green */
             --text-main: #ffffff;
             --text-muted: #8da4ae;
@@ -66,7 +66,7 @@
         }
         .btn-go-back-nav:hover { background: var(--primary-green); color: var(--bg-dark); }
 
-        /* --- BENTO GRID LAYOUT CONTAINER --- */
+        /* --- CONTAINER --- */
         .bento-container { max-width: 1400px; margin: 0 auto; padding: 30px 6% 60px; position: relative; z-index: 5; }
 
         /* HERO TOP SECTION */
@@ -79,7 +79,6 @@
         
         .hero-action-row { display: flex; gap: 15px; margin-bottom: 30px; }
         
-        /* RESTORED GREEN BUTTON */
         .btn-main-play { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; padding: 14px 28px; border-radius: 6px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; background: var(--primary-green); color: var(--bg-dark); border: none; cursor: pointer; transition: 0.3s; }
         .btn-main-play:hover { box-shadow: 0 0 20px rgba(0, 255, 102, 0.4); transform: translateY(-2px); }
 
@@ -99,41 +98,51 @@
         .arrow-left { left: 0; }
         .arrow-right { right: 0; }
 
-        /* --- NEW BENTO GRID CONTENT SECTIONS --- */
-        .bento-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
-        .bento-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px; }
+        /* --- RESTORED ORIGINAL MAIN GRID LAYOUT --- */
+        .bento-main-grid { display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 25px; align-items: start; margin-bottom: 25px;}
         
-        .bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; backdrop-filter: blur(8px); }
-        .bento-card-title { font-family: 'Orbitron', sans-serif; font-size: 1rem; text-transform: uppercase; color: #ffffff; margin-bottom: 15px; letter-spacing: 0.5px; border-bottom: 1px solid rgba(0, 255, 102, 0.2); padding-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; backdrop-filter: blur(8px); }
+        .bento-card-title { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; text-transform: uppercase; color: #ffffff; margin-bottom: 20px; letter-spacing: 0.5px; border-bottom: 1px solid rgba(0, 255, 102, 0.2); padding-bottom: 12px; }
         
-        .bento-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+        .bento-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 15px; }
+        .bento-card p strong { color: var(--text-main); }
 
-        /* Features List inside Bento */
-        .feature-list-bento { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .feature-list-bento li { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: start; gap: 8px; line-height: 1.4; }
-        .feature-list-bento li i { color: var(--text-main); font-size: 0.5rem; margin-top: 5px; }
+        /* Features List */
+        .feature-list-check { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .feature-list-check li { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-muted); }
+        .feature-list-check li i { color: var(--text-main); font-size: 0.6rem; }
 
-        /* Metrics Grid inside Bento */
-        .metrics-grid { display: flex; flex-direction: column; gap: 10px; }
-        .metric-item { display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
-        .metric-item span { color: var(--text-muted); }
-        .metric-item strong { color: var(--text-main); }
+        /* Metrics Grid */
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .metric-box { text-align: center; border-right: 1px solid rgba(0, 255, 102, 0.15); }
+        .metric-box:last-child { border: none; }
+        .metric-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; color: #fff; margin-bottom: 5px; }
+        .metric-box p { font-size: 0.75rem; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; color: var(--primary-green); font-weight: 700; }
 
-        /* Tech Highlights & Challenges lists */
-        .tech-list { display: flex; flex-direction: column; gap: 10px; }
-        .tech-item { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
-        .tech-item strong { color: var(--text-main); display: block; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; margin-bottom: 2px; }
+        /* Technical Highlights Grid */
+        .tech-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .highlight-item { border: 1px solid rgba(0, 255, 102, 0.1); background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; display: flex; gap: 15px; align-items: center; }
+        .highlight-item i { font-size: 1.5rem; color: var(--text-muted); }
+        .highlight-item h5 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: #fff; margin-bottom: 4px; }
+        .highlight-item p { font-size: 0.75rem; margin-bottom: 0; line-height: 1.4; color: var(--text-muted); }
+
+        /* Challenges List */
+        .challenges-list { display: flex; flex-direction: column; gap: 10px; }
+        .challenge-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 15px; align-items: center; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; border: 1px solid rgba(0, 255, 102, 0.1); }
+        .challenge-row p { margin: 0; font-size: 0.8rem; color: var(--text-muted); }
+        .challenge-row p strong { color: #fff; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; display: block; margin-bottom: 3px;}
+        .c-arrow { color: var(--primary-green); font-size: 0.8rem; }
 
         /* Bottom CTA Bar */
-        .bottom-cta-bar { background: var(--bg-card); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+        .bottom-cta-bar { background: var(--bg-card); backdrop-filter: blur(8px); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 25px; }
         .cta-quote { display: flex; gap: 15px; align-items: center; }
-        .cta-quote i { font-size: 2rem; color: var(--primary-green); /* FIXED PURPLE COMMA TO GREEN */ } 
-        .cta-quote p { font-size: 1.1rem; color: #fff; font-weight: 600; max-width: 450px; line-height: 1.4; margin:0; }
+        .cta-quote i { font-size: 2rem; color: var(--primary-green); } 
+        .cta-quote p { font-size: 1.1rem; color: #fff; font-style: italic; max-width: 400px; line-height: 1.4; margin:0; }
         
-        .cta-links { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-        .cta-links span { font-size: 1rem; color: var(--text-main); font-family: 'Orbitron', sans-serif; font-weight: 700;}
-        .link-row { display: flex; gap: 10px; }
-        .link-row a { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #fff; background: rgba(0,0,0,0.4); padding: 8px 16px; border-radius: 4px; border: 1px solid var(--border-color); transition: 0.3s; }
+        .cta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .cta-links span { font-size: 0.85rem; color: var(--text-muted); }
+        .link-row { display: flex; gap: 15px; }
+        .link-row a { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #fff; background: rgba(0,0,0,0.3); padding: 8px 16px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .link-row a:hover { background: rgba(0,255,102,0.1); border-color: var(--primary-green); color: var(--primary-green); }
 
         /* Tag Colors Updated */
@@ -142,9 +151,14 @@
         .color-cyanBlue { color: #00d4ff; }
 
         @media (max-width: 1024px) {
-            .hero-bento { grid-template-columns: 1fr; }
-            .bento-3-col, .bento-2-col { grid-template-columns: 1fr; }
-            .bottom-cta-bar { flex-direction: column; text-align: left; gap: 20px; align-items: flex-start; }
+            .hero-bento, .bento-main-grid { grid-template-columns: 1fr; }
+            .tech-highlights-grid { grid-template-columns: 1fr; }
+            .challenge-row { grid-template-columns: 1fr; text-align: center; }
+            .c-arrow { display: none; }
+            .bottom-cta-bar { flex-direction: column; text-align: center; gap: 20px; }
+            .cta-links { align-items: center; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .metric-box { border: none; }
         }
     </style>
 </head>
@@ -178,7 +192,7 @@
             "retina_detect": true
         });
 
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = newSearchParams(window.location.search);
         const projectId = parseInt(urlParams.get('id'));
 
         if (!projectId) {
@@ -230,46 +244,49 @@
 
                     // Map Features to Bullet Points
                     const listFeaturesMarkup = proj.features ? proj.features.map(f => `
-                        <li><i class="fa-solid fa-circle"></i> ${f.title}: ${f.desc}</li>
+                        <li><i class="fa-solid fa-circle"></i> <strong>${f.title}</strong> - ${f.desc}</li>
                     `).join('') : '<li>No features listed.</li>';
 
                     // Map Meta Info to Metrics 
                     let metaMetricsHTML = '';
                     if(proj.metaInfo) {
                         metaMetricsHTML = proj.metaInfo.map(m => `
-                            <div class="metric-item">
-                                <span>${m.label}</span>
-                                <strong>${m.value}</strong>
+                            <div class="metric-box">
+                                <h3>${m.value.split(' ')[0]}</h3>
+                                <p>${m.label}</p>
                             </div>
                         `).join('');
                     } else {
-                        metaMetricsHTML = `<div class="metric-item"><span>Year</span><strong>${proj.year}</strong></div><div class="metric-item"><span>Platform</span><strong>${proj.platform}</strong></div>`;
+                        metaMetricsHTML = `<div class="metric-box"><h3>${proj.year}</h3><p>Year</p></div><div class="metric-box"><h3>${proj.platform}</h3><p>Platform</p></div>`;
                     }
 
-                    // Technical Highlights List
+                    // Technical Highlights Grid
                     let techHighlightsHTML = '';
                     if(proj.techHighlights) {
                         techHighlightsHTML = proj.techHighlights.map(m => `
-                            <div class="tech-item">
-                                <strong>${m.title}</strong>
-                                ${m.desc}
+                            <div class="highlight-item">
+                                <div>
+                                    <h5>${m.title}</h5>
+                                    <p>${m.desc}</p>
+                                </div>
                             </div>
                         `).join('');
                     } else {
-                        techHighlightsHTML = `<div class="tech-item">No technical highlights available.</div>`;
+                        techHighlightsHTML = `<p>No technical highlights available.</p>`;
                     }
 
                     // Challenges List
                     let challengesHTML = '';
                     if(proj.challenges) {
                         challengesHTML = proj.challenges.map(c => `
-                            <div class="tech-item">
-                                <strong>Challenge: ${c.challenge}</strong>
-                                Solution: ${c.solution}
+                            <div class="challenge-row">
+                                <p><strong>Challenge:</strong> ${c.challenge}</p>
+                                <i class="fa-solid fa-chevron-right c-arrow"></i>
+                                <p><strong>Solution:</strong> ${c.solution}</p>
                             </div>
                         `).join('');
                     } else {
-                        challengesHTML = `<div class="tech-item">No challenges documented.</div>`;
+                        challengesHTML = `<p>No challenges documented.</p>`;
                     }
 
                     // Dynamic CTA Links (Removing Github dynamically)
@@ -277,7 +294,6 @@
                     let ctaQuote = "Building fun, optimized and scalable games that players love.";
                     if(proj.cta) {
                         ctaQuote = proj.cta.quote;
-                        // Filters out the GitHub link if it exists in JSON
                         ctaLinksHTML = proj.cta.links.filter(l => l.text.toLowerCase() !== 'github').map(l => `
                             <a href="${l.url}" target="_blank"><i class="fa-brands ${l.icon}" style="color:${l.iconColor}"></i> ${l.text}</a>
                         `).join('');
@@ -311,36 +327,42 @@
                             </div>
                         </div>
 
-                        <div class="bento-3-col">
-                            <div class="bento-card">
-                                <h3 class="bento-card-title">Overview</h3>
-                                <p>${proj.overview || 'Overview of the project mechanics and details.'}</p>
-                            </div>
-                            <div class="bento-card">
-                                <h3 class="bento-card-title">Features</h3>
-                                <ul class="feature-list-bento">
-                                    ${listFeaturesMarkup}
-                                </ul>
-                            </div>
-                            <div class="bento-card">
-                                <h3 class="bento-card-title">Metrics</h3>
-                                <div class="metrics-grid">
-                                    ${metaMetricsHTML}
+                        <div class="bento-main-grid">
+                            
+                            <div style="display:flex; flex-direction:column; gap:25px;">
+                                <div class="bento-card">
+                                    <h3 class="bento-card-title">Project Overview</h3>
+                                    <p>${proj.overview || 'Overview of the project mechanics and details.'}</p>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="bento-2-col">
-                            <div class="bento-card">
-                                <h3 class="bento-card-title">Technical Highlights</h3>
-                                <div class="tech-list">
-                                    ${techHighlightsHTML}
+                                <div class="bento-card">
+                                    <h3 class="bento-card-title">Key Features</h3>
+                                    <ul class="feature-list-check">
+                                        ${listFeaturesMarkup}
+                                    </ul>
+                                </div>
+                                
+                                <div class="bento-card">
+                                    <h3 class="bento-card-title">Project Metrics</h3>
+                                    <div class="metrics-grid">
+                                        ${metaMetricsHTML}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="bento-card">
-                                <h3 class="bento-card-title">Challenges</h3>
-                                <div class="tech-list">
-                                    ${challengesHTML}
+
+                            <div style="display:flex; flex-direction:column; gap:25px;">
+                                <div class="bento-card">
+                                    <h3 class="bento-card-title">Technical Highlights</h3>
+                                    <div class="tech-highlights-grid">
+                                        ${techHighlightsHTML}
+                                    </div>
+                                </div>
+
+                                <div class="bento-card">
+                                    <h3 class="bento-card-title">Challenges & Solutions</h3>
+                                    <div class="challenges-list">
+                                        ${challengesHTML}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -362,14 +384,11 @@
                 .catch(err => console.error("Error launching dynamic system layouts:", err));
         }
 
-        // --- FIXED: AUTO-SLIDE ON IMAGE SELECTION ---
+        // --- AUTO-SLIDE ON IMAGE SELECTION ---
         function switchSteamMedia(type, path, elementRef) {
-            // Remove active classes
             document.querySelectorAll('.steam-thumb').forEach(el => el.classList.remove('active'));
-            // Add active class to clicked thumbnail
             elementRef.classList.add('active');
             
-            // Change viewport content
             const viewport = document.getElementById('steam-main-viewport');
             if (type === 'video') {
                 viewport.innerHTML = `<iframe id="steam-iframe-target" src="${path}" allowfullscreen></iframe>`;
@@ -377,17 +396,12 @@
                 viewport.innerHTML = `<img src="${path}" onerror="this.src='https://via.placeholder.com/1920x1080/041219/ffffff'">`;
             }
 
-            // Bring the active thumbnail to the center (Auto-Scroll)
             const track = document.getElementById('steam-slider-track');
-            const thumbWidth = elementRef.offsetWidth + 10; // width + gap
+            const thumbWidth = elementRef.offsetWidth + 10; 
             const centerPosition = elementRef.offsetLeft + (thumbWidth / 2);
             const viewCenter = track.clientWidth / 2;
             
-            // Smoothly scroll the track
-            track.scroll({
-                left: centerPosition - viewCenter,
-                behavior: 'smooth'
-            });
+            track.scroll({ left: centerPosition - viewCenter, behavior: 'smooth' });
         }
 
         function slideSteamTray(direction) {
