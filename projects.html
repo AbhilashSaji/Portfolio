@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Abhilash Saji</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #02080c;
+            --bg-card: #041219;
+            --primary-green: #00ff66; 
+            --text-main: #ffffff;
+            --text-muted: #7d9096;
+            --border-color: rgba(255, 255, 255, 0.05);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding: 40px 8%;
+        }
+        .back-nav {
+            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+        
+        /* --- TOP HERO PROJECT --- */
+        .hero-project-container {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            margin-bottom: 60px;
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.05);
+        }
+        .hero-proj-img {
+            width: 100%; height: 420px; object-fit: cover;
+        }
+        .hero-proj-info {
+            padding: 45px; display: flex; flex-direction: column; justify-content: center;
+        }
+        .hero-proj-tag {
+            color: var(--primary-green); font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase;
+        }
+        .hero-proj-name {
+            font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase;
+        }
+        .hero-proj-desc {
+            color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px;
+        }
+        
+        /* --- ALL OTHER PROJECTS GRID --- */
+        .grid-title {
+            font-family: 'Orbitron', sans-serif; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 35px;
+        }
+        .grid-title span { color: var(--primary-green); }
+        
+        .all-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .proj-card {
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;
+        }
+        .proj-img-holder {
+            width: 100%; height: 200px; background: #061822; position: relative;
+        }
+        .proj-img-holder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+        .proj-card-tag {
+            position: absolute; top: 12px; left: 12px; background: rgba(2, 8, 12, 0.9); border: 1px solid var(--primary-green);
+            color: var(--primary-green); font-size: 0.65rem; padding: 4px 10px; border-radius: 4px; font-weight: 700; text-transform: uppercase;
+        }
+        .proj-card-info { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
+        .proj-card-name { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; margin-bottom: 12px; text-transform: uppercase; }
+        .proj-card-desc { color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
+        .proj-card-link { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--primary-green); display: flex; align-items: center; gap: 8px; }
+
+        @media(max-width: 968px) {
+            .hero-project-container { grid-template-columns: 1fr; }
+            .hero-proj-img { height: 260px; }
+            .hero-proj-info { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-nav"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+
+    <div id="hero-project-target">
+        </div>
+
+    <h3 class="grid-title">All Game <span>Archives</span></h3>
+    <div class="all-projects-grid" id="archive-grid-target">
+        </div>
+
+    <script>
+        // JSON ഫയലിൽ നിന്ന് ഡാറ്റ ലോഡ് ചെയ്യുന്നു
+        fetch('projects.json')
+            .then(response => response.json())
+            .then(data => {
+                // 1. ഒന്നാമത്തെ ഐറ്റത്തെ (ID: 1) ഹീറോ പ്രൊജക്റ്റായി സെറ്റ് ചെയ്യുന്നു
+                const heroProject = data.find(p => p.id === 1) || data[0];
+                const heroTarget = document.getElementById('hero-project-target');
+                
+                heroTarget.innerHTML = `
+                    <div class="hero-project-container">
+                        <img src="${heroProject.image}" alt="${heroProject.name}" class="hero-proj-img" onerror="this.src='https://via.placeholder.com/600x420/061822/ffffff?text=Game+Poster'">
+                        <div class="hero-proj-info">
+                            <span class="hero-proj-tag">${heroProject.tag}</span>
+                            <h2 class="hero-proj-name">${heroProject.name}</h2>
+                            <p class="hero-proj-desc">${heroProject.desc}</p>
+                            <a href="#" class="back-nav" style="margin-bottom:0;">Launch Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `;
+
+                // 2. ബാക്കി എല്ലാ ഗെയിമുകളെയും താഴത്തെ ഗ്രിഡിൽ കാണിക്കുന്നു
+                const gridTarget = document.getElementById('archive-grid-target');
+                gridTarget.innerHTML = data.map(proj => `
+                    <div class="proj-card">
+                        <div class="proj-img-holder">
+                            <span class="proj-card-tag">${proj.tag}</span>
+                            <img src="${proj.image}" alt="${proj.name}" onerror="this.src='https://via.placeholder.com/300x200/061822/ffffff?text=Game'">
+                        </div>
+                        <div class="proj-card-info">
+                            <h4 class="proj-card-name">${proj.name}</h4>
+                            <p class="proj-card-desc">${proj.desc}</p>
+                            <a href="#" class="proj-card-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `).join('');
+            });
+    </script>
+</body>
+</html>
