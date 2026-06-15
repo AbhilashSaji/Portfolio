@@ -6,7 +6,7 @@
         "tagColor": "green",
         "category": "platformer",
         "image": "Images/Pixel-Forest-Adventure/PixelForestThumbnail.png",
-        "desc": "A 2D platformer with collectible-based progression, score tracking, immersive sound design, and carefully crafted levels that encourage exploration and skillful gameplay.",
+        "desc": "A 2D platformer with collectible mechanics, level progression, score tracking and sound effects.",
         "tech": ["Unity", "C#", "2D"],
         "isHighlighted": true,
         "year": "2025",
@@ -15,7 +15,7 @@
         "role": "Game Developer",
         "liveDemo": "https://mrshadowseverz.github.io/Pixel-Forest-Adventure/",
         "videoUrl": "https://www.youtube.com/embed/EDXKdE1kVC8",
-        "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments. Designed and developed as a complete PC game, the project highlights practical game development skills including gameplay programming, UI/UX implementation, audio systems, scene management, and player progression mechanics. The result is a polished and engaging experience that demonstrates end-to-end game production capabilities.",
+        "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments.",
         "features": [
             {"icon": "fa-solid fa-coins", "title": "Collectibles", "desc": "Coins & Score"},
             {"icon": "fa-solid fa-up-long", "title": "Level System", "desc": "Unlock & Progression"},
@@ -38,7 +38,6 @@
             "Images/Pixel-Forest-Adventure/Pixed2DYouWin.png"
         ]
     },
-    
     {
         "id": 2,
         "name": "Tom And Jerry",
@@ -47,31 +46,29 @@
         "category": "mobile",
         "image": "Images/Tom-And-Jerry/TomAndJerryThumbnail.png",
         "desc": "A retro-futuristic endless runner with collectible progression, real-time scoring, immersive audio, optimized mobile performance, and persistent player data.",
-        "tech": ["Unity", "C#", "3D", "Audio Mixer", "Mobile Optimization"],
+        "tech": ["Unity", "C#", "3D", "Mobile Optimization"],
         "isHighlighted": true,
         "year": "2025",
-        "platform": "PC",
+        "platform": "Mobile",
         "engine": "Unity Engine",
         "role": "Game Developer",
-        "liveDemo": "https://mrshadowseverz.github.io/Pixel-Forest-Adventure/",
+        "liveDemo": "#",
         "videoUrl": "https://www.youtube.com/embed/EDXKdE1kVC8",
-        "overview": "Pixel Forest Adventure is a Unity-powered 2D platformer featuring collectible-based progression, score-driven challenges, interactive gameplay systems, and immersive pixel-art environments. Designed and developed as a complete PC game, the project highlights practical game development skills including gameplay programming, UI/UX implementation, audio systems, scene management, and player progression mechanics. The result is a polished and engaging experience that demonstrates end-to-end game production capabilities.",
+        "overview": "Tom and Jerry Endless Runner is a fast-paced mobile game featuring smooth touch controls, dynamic obstacles, and high-score mechanics. Built with Unity's mobile optimization pipeline.",
         "features": [
-            {"icon": "fa-solid fa-coins", "title": "Collectibles", "desc": "Coins & Score"},
-            {"icon": "fa-solid fa-up-long", "title": "Level System", "desc": "Unlock & Progression"},
-            {"icon": "fa-solid fa-volume-high", "title": "Audio Settings", "desc": "SFX & Music Control"},
-            {"icon": "fa-solid fa-table-columns", "title": "UI System", "desc": "Menus & Panels"},
-            {"icon": "fa-solid fa-shuffle", "title": "Scene Logic", "desc": "Smooth Transitions"},
-            {"icon": "fa-solid fa-floppy-disk", "title": "Save System", "desc": "Player Progress"}
+            {"icon": "fa-solid fa-cheese", "title": "Cheese Run", "desc": "Collect Cheese"},
+            {"icon": "fa-solid fa-gauge-high", "title": "Speed Runner", "desc": "High Speed Mode"},
+            {"icon": "fa-solid fa-shield", "title": "Power Ups", "desc": "Shield & Speed"},
+            {"icon": "fa-solid fa-trophy", "title": "Leaderboard", "desc": "Global Rank"},
+            {"icon": "fa-solid fa-music", "title": "Sound FX", "desc": "Original Audio"},
+            {"icon": "fa-solid fa-mobile-screen", "title": "Optimization", "desc": "Mobile Ready"}
         ],
         "videos": [
-            {"title": "Full Gameplay Walkthrough", "duration": "02:15", "url": "https://www.youtube.com/embed/EDXKdE1kVC8"}
+            {"title": "Gameplay Demo", "duration": "01:30", "url": "https://www.youtube.com/embed/EDXKdE1kVC8"}
         ],
         "gallery": [
             "Images/Tom-And-Jerry/TAJ_01.png",
-            "Images/Tom-And-Jerry/TAJ_02.png",
-            "Images/Tom-And-Jerry/TAJ_03.png",
-            "Images/Tom-And-Jerry/TAJ_04.png"
+            "Images/Tom-And-Jerry/TAJ_02.png"
         ]
     }
 ]
