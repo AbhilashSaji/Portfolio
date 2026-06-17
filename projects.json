@@ -169,7 +169,7 @@
         "tagColor": "orange",
         "category": "fps-tps",
         "image": "Images/Tom-And-Jerry/TomAndJerryThumbnail.png",
-        "desc": "An engaging third-person shooter built in Unity, highlighting advanced Cinemachine camera logic, fluid animation blending, and NavMesh-driven AI."
+        "desc": "An engaging third-person shooter built in Unity, highlighting advanced Cinemachine camera logic, fluid animation blending, and NavMesh-driven AI.",
         "tech": ["Unity", "C#", "Animator Controller", "NavMesh AI", "Cinemachine"],
         "isHighlighted": true,
         "year": "2025",
@@ -197,7 +197,7 @@
             {"icon": "fa-solid fa-person-running", "title": "Fluid<br>Animation"},
             {"icon": "fa-solid fa-map-location-dot", "title": "Level<br>Design"},
             {"icon": "fa-solid fa-desktop", "title": "Game<br>Loop UI"}
-        ]
+        ],
         "keyFeatures": [
             {"title": "Responsive TPS Combat", "desc": "Precision aiming, shooting, and fluid character locomotion tailored for third-person action."},
             {"title": "Advanced Enemy AI", "desc": "NavMesh-driven guards equipped with ranged attacks (fireballs), dynamic pathfinding, and target tracking."},
@@ -207,12 +207,12 @@
             {"title": "Fluid Animation Blending", "desc": "Complex Animator Controllers ensuring seamless transitions between running, aiming, shooting, and taking damage."},
             {"title": "Interactive Level Design", "desc": "Stylized, multi-level environments featuring vertical combat spaces, mission portals, and locked enclosures."},
             {"title": "Complete Game Loop UI", "desc": "Fully functional interface elements including 3D mission briefings, pause menus, game over, and victory screens."}
-        ]
+        ],
         "techHighlights": [
             {"icon": "fa-cubes", "color": "c-purple", "title": "Modular Architecture", "desc": "Clean, scalable C# systems managing the core combat and interaction loops."},
-            {"icon": "fa-database", "color": "c-green", "title": "Advanced Camera Logic", "desc": "Integrated Unity Cinemachine for smooth, responsive third-person camera tracking and aiming."},
-            {"icon": "fa-sliders", "color": "c-blue", "title": "Intelligent AI", "desc": "Utilized Unity NavMesh for dynamic enemy pathfinding, pursuit, and combat behavior."},
-            {"icon": "fa-mobile-screen", "color": "c-orange", "title": "Animation Blending", "desc": "Complex Animator Controller setups to seamlessly transition between running, aiming, and shooting states."}
+            {"icon": "fa-video", "color": "c-green", "title": "Advanced Camera Logic", "desc": "Integrated Unity Cinemachine for smooth, responsive third-person camera tracking and aiming."},
+            {"icon": "fa-brain", "color": "c-blue", "title": "Intelligent AI", "desc": "Utilized Unity NavMesh for dynamic enemy pathfinding, pursuit, and combat behavior."},
+            {"icon": "fa-person-running", "color": "c-orange", "title": "Animation Blending", "desc": "Complex Animator Controller setups to seamlessly transition between running, aiming, and shooting states."}
         ],
        "challenges": [
             {"challenge": "Implementing precise aiming and shooting mechanics in a third-person perspective.", "solution": "Integrated Unity Cinemachine with custom raycasting logic to ensure projectiles accurately align with the center screen reticle."},
