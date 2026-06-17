@@ -107,20 +107,14 @@
         .feature-list-check li i { color: var(--primary-green); font-size: 1.1rem; margin-top: 2px; }
         .feature-list-check li strong { color: #fff; }
 
-        /* Tech Highlights (MODIFIED WITH HIGHLIGHT EFFECT & COLORS) */
+        /* Tech Highlights */
         .tech-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .highlight-item { border: 1px solid rgba(0, 255, 102, 0.1); background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; display: flex; gap: 15px; align-items: center; transition: all 0.3s ease; }
         .highlight-item:hover { border-color: var(--primary-green); background: rgba(0, 255, 102, 0.05); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 255, 102, 0.15); }
-        .highlight-item i { font-size: 1.8rem; } /* Removed forced muted color so specific classes work */
+        .highlight-item i { font-size: 1.5rem; } 
         .highlight-item h5 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: #fff; margin-bottom: 4px; transition: color 0.3s ease; }
         .highlight-item:hover h5 { color: var(--primary-green); }
         .highlight-item p { font-size: 0.75rem; margin-bottom: 0; line-height: 1.4; color: var(--text-muted); }
-
-        /* Specific Highlight Icon Colors */
-        .c-blue { color: #33a6ff !important; }
-        .c-purple { color: #bb55ff !important; }
-        .c-green { color: #00ffbc !important; }
-        .c-orange { color: #ffcc00 !important; }
 
         /* Challenges */
         .challenges-list { display: flex; flex-direction: column; gap: 10px; }
@@ -159,10 +153,27 @@
         }
         #scrollToTopBtn:hover { background-color: var(--primary-green); color: var(--bg-dark); box-shadow: 0 0 15px rgba(0,255,102,0.4); transform: translateY(-3px); }
 
-        /* Tag Colors Updated */
-        .tag-green { border: 1px solid #00ff66; color: #00ff66; }
-        .tag-cyanBlue { border: 1px solid #00d4ff; color: #00d4ff; }
+        /* --- TAG COLORS & ICON HIGHLIGHT COLORS FIX --- */
+        .tag-green { border: 1px solid #00ff66; color: #00ff66; background: rgba(0,255,102,0.05); }
+        .color-green { color: #00ff66; }
+
+        .tag-cyanBlue { border: 1px solid #00d4ff; color: #00d4ff; background: rgba(0,212,255,0.05); }
         .color-cyanBlue { color: #00d4ff; }
+
+        .tag-orange { border: 1px solid #ff9900; color: #ff9900; background: rgba(255,153,0,0.05); }
+        .color-orange { color: #ff9900; }
+
+        .tag-purple { border: 1px solid #bb55ff; color: #bb55ff; background: rgba(187,85,255,0.05); }
+        .color-purple { color: #bb55ff; }
+
+        .tag-red { border: 1px solid #ff3344; color: #ff3344; background: rgba(255,51,68,0.05); }
+        .color-red { color: #ff3344; }
+
+        /* Support specific tech highlight colors */
+        .c-blue { color: #33a6ff !important; }
+        .c-purple { color: #bb55ff !important; }
+        .c-green { color: #00ffbc !important; }
+        .c-orange { color: #ffcc00 !important; }
 
         @media (max-width: 1024px) {
             .hero-bento, .bento-main-grid { grid-template-columns: 1fr; }
@@ -246,7 +257,13 @@
                     let chosenColor = proj.tagColor || "green";
                     let tagClass = `tag-${chosenColor}`;
                     let iconColorClass = `color-${chosenColor}`;
-                    let fallbackIcon = proj.category === "platformer" ? "fa-solid fa-tree" : "fa-solid fa-bolt";
+
+                    // Icon Logic Mapping
+                    let fallbackIcon = "fa-solid fa-bolt";
+                    if (proj.category === "platformer") fallbackIcon = "fa-solid fa-tree";
+                    else if (proj.category === "fps&tps") fallbackIcon = "fa-solid fa-crosshairs";
+                    else if (proj.category === "mobile") fallbackIcon = "fa-solid fa-mobile-screen";
+                    else if (proj.category === "simulation") fallbackIcon = "fa-solid fa-car-side";
 
                     // JSON Controlled Button
                     let heroBtnMarkup = '';
@@ -313,7 +330,7 @@
                         </div>
                     `).join('') : '';
 
-                    // Tech Highlights Map (MODIFIED TO USE COLORS)
+                    // Tech Highlights Map
                     let techHighlightsHTML = proj.techHighlights ? proj.techHighlights.map(m => `
                         <div class="highlight-item">
                             <i class="fa-solid ${m.icon} ${m.color || ''}"></i>
@@ -347,7 +364,7 @@
                     let ctaQuote = "Building fun, optimized and scalable games that players love.";
                     if(proj.cta) {
                         ctaQuote = proj.cta.quote || ctaQuote;
-                        ctaLinksHTML = proj.cta.links.map(l => `
+                        ctaLinksHTML = proj.cta.links.filter(l => l.text.toLowerCase() !== 'github').map(l => `
                             <a href="${l.url}" target="_blank">
                                 <i class="${l.icon}" style="color:${l.iconColor}"></i> ${l.text}
                             </a>
