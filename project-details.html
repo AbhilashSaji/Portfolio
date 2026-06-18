@@ -31,11 +31,12 @@
         
         a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
-        /* --- BACKGROUND --- */
+        /* --- BACKGROUND WITH REDUCED BLUR --- */
         #dynamic-bg-blur {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover; background-position: center;
-            filter: blur(15px) brightness(0.25); transform: scale(1.05); z-index: -2;
+            /* Changed blur from 15px to 6px and increased brightness slightly */
+            filter: blur(6px) brightness(0.3); transform: scale(1.05); z-index: -2;
             transition: background-image 0.5s ease;
         }
 
@@ -159,11 +160,8 @@
         }
         #scrollToTopBtn:hover { background-color: var(--primary-green); color: var(--bg-dark); box-shadow: 0 0 15px rgba(0,255,102,0.4); transform: translateY(-3px); }
 
-        /* --- ALL TAG AND TEXT COLORS ADDED --- */
+        /* Tag Colors Updated */
         .tag-green { border: 1px solid #00ff66; color: #00ff66; }
-        .color-green { color: #00ff66; }
-        .tag-blue { border: 1px solid #33a6ff; color: #33a6ff; }
-        .color-blue { color: #33a6ff; }
         .tag-cyanBlue { border: 1px solid #00d4ff; color: #00d4ff; }
         .color-cyanBlue { color: #00d4ff; }
         .tag-orange { border: 1px solid #ff9900; color: #ff9900; }
@@ -172,6 +170,8 @@
         .color-purple { color: #bb55ff; }
         .tag-red { border: 1px solid #ff3344; color: #ff3344; }
         .color-red { color: #ff3344; }
+        .color-green { color: #00ff66; }
+        .color-blue { color: #33a6ff; }
 
         @media (max-width: 1024px) {
             .hero-bento, .bento-main-grid { grid-template-columns: 1fr; }
@@ -283,7 +283,6 @@
                         fallbackIcon = "fa-solid fa-vr-cardboard"; 
                     }
                     else if (catArray.includes("mobile")) {
-                        // Changed to fa-bolt to match home/projects page
                         fallbackIcon = "fa-solid fa-bolt";
                     }
 
