@@ -273,9 +273,9 @@
             {"icon": "fa-solid fa-volume-high", "title": "Spatial<br>Audio"},
             {"icon": "fa-solid fa-moon", "title": "Dark<br>Atmosphere"},
             {"icon": "fa-solid fa-film", "title": "Video<br>UI"},
-            {"icon": "fa-solid fa-box-open", "title": "Inventory<br>System"},
-            {"icon": "fa-solid fa-heart-crack", "title": "Sanity<br>Mechanic"},
-            {"icon": "fa-solid fa-puzzle-piece", "title": "Interactive<br>Puzzles"},
+            {"icon": "fa-solid fa-mountain", "title": "Custom<br>Terrain"},
+            {"icon": "fa-solid fa-lungs", "title": "Panic<br>Breathing"},
+            {"icon": "fa-solid fa-wand-magic-sparkles", "title": "Particle<br>Effects"},
             {"icon": "fa-solid fa-lightbulb", "title": "Dynamic<br>Lighting"}
         ],
         "keyFeatures": [
@@ -288,8 +288,9 @@
             {"title": "Mission-Driven Gameplay", "desc": "Clear objectives guiding the player through the haunted environment."},
             {"title": "Polished UI Transitions", "desc": "Smooth menus, death screens, and victory sequences that fit the horror theme."},
             {"title": "Procedural Scare Engine", "desc": "An intelligent background system that analyzes player behavior and camera angles to trigger scares unpredictably, ensuring no two playthroughs are the same."},
-            {"title": "Adaptive Sanity Mechanic", "desc": "Player fear levels dynamically alter the environment, introducing audio hallucinations and visual distortions as sanity drops."},
-            {"title": "Interactive Environmental Puzzles", "desc": "Story-driven brain teasers and lore-filled collectibles smoothly integrated into the haunted mansion's level design."}
+            {"title": "Audio-Driven Panic System", "desc": "Implemented a dynamic fear mechanic where the player's breathing rate and audio intensity increase upon spotting a ghost, heightening tension through sound rather than visual clutter."},
+            {"title": "Dynamic Particle FX", "desc": "Custom particle systems and visual effects that make the ghost capturing mechanics feel highly impactful and rewarding."},
+            {"title": "Custom Terrain & Environment", "desc": "Handcrafted outdoor environments utilizing Unity's Terrain tools, featuring custom painted textures, optimized grass, and atmospheric tree placements."}
         ],
         "techHighlights": [
             {"icon": "fa-brain", "color": "c-purple", "title": "Finite State Machine", "desc": "Robust AI architecture handling complex state transitions (Patrol, Chase, Ambush)."},
