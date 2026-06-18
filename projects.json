@@ -274,7 +274,7 @@
         "role": "Game Developer",
         "heroBtn": {
             "text": "Play Demo",
-            "url": "#",
+            "url": "link",
             "icon": "fa-solid fa-gamepad"
         },
         "metaInfo": [
@@ -365,7 +365,7 @@
         "role": "Game Developer",
         "heroBtn": {
             "text": "Play Demo",
-            "url": "#",
+            "url": "https://6a344d97f20a82e391db6218--car-parking-game.netlify.app/",
             "icon": "fa-solid fa-gamepad"
         },
         "metaInfo": [
