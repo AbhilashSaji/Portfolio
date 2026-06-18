@@ -216,7 +216,7 @@
             {"icon": "fa-brain", "color": "c-blue", "title": "Intelligent AI", "desc": "Utilized Unity NavMesh for dynamic enemy pathfinding, pursuit, and combat behavior."},
             {"icon": "fa-person-running", "color": "c-orange", "title": "Animation Blending", "desc": "Complex Animator Controller setups to seamlessly transition between running, aiming, and shooting states."}
         ],
-       "challenges": [
+        "challenges": [
             {"challenge": "Implementing precise aiming and shooting mechanics in a third-person perspective.", "solution": "Integrated Unity Cinemachine with custom raycasting logic to ensure projectiles accurately align with the center screen reticle."},
             {"challenge": "Ensuring fluid transitions between running, aiming, and firing states.", "solution": "Developed a complex Animator Controller using Blend Trees and Avatar Masks to seamlessly merge upper-body combat actions with lower-body locomotion."},
             {"challenge": "Creating responsive and intelligent enemy behavior.", "solution": "Utilized Unity's NavMesh system paired with state-machine logic, allowing enemies to patrol, detect the player, pursue, and execute ranged attacks."},
