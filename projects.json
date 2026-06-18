@@ -276,7 +276,7 @@
             {"icon": "fa-solid fa-box-open", "title": "Inventory<br>System"},
             {"icon": "fa-solid fa-heart-crack", "title": "Sanity<br>Mechanic"},
             {"icon": "fa-solid fa-puzzle-piece", "title": "Interactive<br>Puzzles"},
-            {"icon": "fa-solid fa-flashlight", "title": "Dynamic<br>Lighting"}
+            {"icon": "fa-solid fa-lightbulb", "title": "Dynamic<br>Lighting"}
         ],
         "keyFeatures": [
             {"title": "Advanced Ghost AI", "desc": "Enemies utilize a Finite State Machine for intelligent patrolling, chasing, and hit-and-run tactics."},
