@@ -289,7 +289,6 @@
             {"title": "Polished UI Transitions", "desc": "Smooth menus, death screens, and victory sequences that fit the horror theme."},
             {"title": "Procedural Scare Engine", "desc": "An intelligent background system that analyzes player behavior and camera angles to trigger scares unpredictably, ensuring no two playthroughs are the same."},
             {"title": "Adaptive Sanity Mechanic", "desc": "Player fear levels dynamically alter the environment, introducing audio hallucinations and visual distortions as sanity drops."},
-            {"title": "Resource Scarcity & Inventory", "desc": "A tense survival loop requiring players to carefully manage limited flashlight batteries and capture-weapon ammo via a seamless inventory system."},
             {"title": "Interactive Environmental Puzzles", "desc": "Story-driven brain teasers and lore-filled collectibles smoothly integrated into the haunted mansion's level design."}
         ],
         "techHighlights": [
