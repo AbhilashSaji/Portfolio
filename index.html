@@ -22,10 +22,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
-        /* --- ADDED FULL PAGE BACKGROUND HERE --- */
+        /* --- BACKGROUND WITH ENHANCED OPACITY & VIGNETTE EFFECT --- */
         body { 
             background-color: var(--bg-dark); 
-            background-image: linear-gradient(rgba(2, 8, 12, 0.88), rgba(2, 8, 12, 0.95)), url('Images/bg-home.png');
+            /* Radial gradient creates a spotlight effect: clearer in the center, darker at the edges */
+            background-image: radial-gradient(circle at 50% 30%, rgba(2, 8, 12, 0.65) 0%, rgba(2, 8, 12, 0.95) 100%), url('Images/bg-home.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -237,7 +238,7 @@
         </div>
 
         <div class="hero-graphic-container">
-            <img src="Images/bg-home.png" alt="Portal Concept Art" class="bg-main-image">
+            <img src="Images/bg-main.png" alt="Portal Concept Art" class="bg-main-image">
         </div>
     </section>
 
@@ -559,7 +560,7 @@
                     let tagClass = `tag-${chosenColor}`;
                     let iconColorClass = `color-${chosenColor}`;
 
-                    let fallbackIcon = "fa-solid fa-gamepad"; 
+                    let fallbackIcon = "fa-solid fa-gamepad";
                     let catArray = Array.isArray(proj.category) 
                                     ? proj.category.map(c => c.toLowerCase()) 
                                     : [proj.category ? proj.category.toLowerCase() : ""];
