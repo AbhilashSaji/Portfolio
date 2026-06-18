@@ -264,7 +264,7 @@
         "tag": "First Person Shooter",
         "tagColor": "purple",
         "category": "fps-tps",
-        "image": "Images/The-Silent-Prayer/Thumbnail.png",
+        "image": "Images/The-Silent-Prayer/TSP-Thumbnail.png",
         "desc": "A survival horror FPS featuring an advanced Finite State Machine for unpredictable ghost AI, dynamic teleportation scares, and spatial audio.",
         "tech": ["Unity", "C#", "NavMesh Agents", "Finite State Machines", "Spatial Audio", "RenderTextures"],
         "isHighlighted": true,
@@ -324,13 +324,21 @@
             {"challenge": "Balancing visibility in a horror setting so it feels terrifyingly dark without becoming frustratingly unplayable.", "solution": "Implemented dynamic volumetric lighting and a physically-based flashlight mechanic that realistically illuminates specific materials while casting harsh, unpredictable dynamic shadows."}
         ],
         "videos": [
-            {"title": "Survival Horror AI Demo", "url": "https://www.youtube.com/embed/YOUR_VIDEO_LINK_HERE"}
+            {"title": "Survival Horror AI Demo", "url": "https://www.youtube.com/embed/PKIv7fO3t9A"}
         ],
         "gallery": [
-            "Images/The-Silent-Prayer/TSP_01.png",
+            "Images/The-Silent-Prayer/TSP-01.png",
             "Images/The-Silent-Prayer/TSP_02.png",
             "Images/The-Silent-Prayer/TSP_03.png",
-            "Images/The-Silent-Prayer/TSP_04.png"
+            "Images/The-Silent-Prayer/TSP_04.png",
+            "Images/The-Silent-Prayer/TSP-05.png",
+            "Images/The-Silent-Prayer/TSP_06.png",
+            "Images/The-Silent-Prayer/TSP_07.png",
+            "Images/The-Silent-Prayer/TSP_08.png",
+            "Images/The-Silent-Prayer/TSP-09.png",
+            "Images/The-Silent-Prayer/TSP_10.png",
+            "Images/The-Silent-Prayer/TSP_11.png",
+            "Images/The-Silent-Prayer/TSP_12.png"
         ],
         "cta": {
             "quote": "Building immersive, atmospheric experiences that keep players on the edge of their seats.",
