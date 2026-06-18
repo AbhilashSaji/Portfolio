@@ -242,7 +242,7 @@
         "id": 4,
         "name": "The Silent Prayer",
         "tag": "First Person Shooter",
-        "tagColor": "red",
+        "tagColor": "purple",
         "category": "fps-tps",
         "image": "Images/Tom-And-Jerry/TomAndJerryThumbnail.png",
         "desc": "An engaging third-person shooter built in Unity, highlighting advanced Cinemachine camera logic, fluid animation blending, and NavMesh-driven AI.",
