@@ -107,7 +107,7 @@
         .feature-list-check li i { color: var(--primary-green); font-size: 1.1rem; margin-top: 2px; }
         .feature-list-check li strong { color: #fff; }
 
-        /* Tech Highlights */
+        /* Tech Highlights (MODIFIED WITH HIGHLIGHT EFFECT & COLORS) */
         .tech-highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .highlight-item { border: 1px solid rgba(0, 255, 102, 0.1); background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; display: flex; gap: 15px; align-items: center; transition: all 0.3s ease; }
         .highlight-item:hover { border-color: var(--primary-green); background: rgba(0, 255, 102, 0.05); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 255, 102, 0.15); }
@@ -165,6 +165,10 @@
         .color-cyanBlue { color: #00d4ff; }
         .tag-orange { border: 1px solid #ff9900; color: #ff9900; }
         .color-orange { color: #ff9900; }
+        .tag-purple { border: 1px solid #bb55ff; color: #bb55ff; }
+        .color-purple { color: #bb55ff; }
+        .tag-red { border: 1px solid #ff3344; color: #ff3344; }
+        .color-red { color: #ff3344; }
 
         @media (max-width: 1024px) {
             .hero-bento, .bento-main-grid { grid-template-columns: 1fr; }
@@ -250,11 +254,31 @@
                     let iconColorClass = `color-${chosenColor}`;
 
                     // --- CORRECTED ICON LOGIC ---
-                    let fallbackIcon = "fa-solid fa-gamepad"; // Default
-                    if (proj.category === "platformer") fallbackIcon = "fa-solid fa-tree";
-                    else if (proj.category === "mobile") fallbackIcon = "fa-solid fa-bolt";
-                    else if (proj.category === "fps&tps") fallbackIcon = "fa-solid fa-crosshairs";
-                    else if (proj.category === "simulation") fallbackIcon = "fa-solid fa-car-side";
+                    let fallbackIcon = "fa-solid fa-gamepad"; // Default Icon
+                    
+                    let categoryName = proj.category ? proj.category.toLowerCase() : "";
+                    
+                    if (categoryName === "platformer" || categoryName === "platformers") {
+                        fallbackIcon = "fa-solid fa-tree";
+                    } 
+                    else if (categoryName === "mobile") {
+                        fallbackIcon = "fa-solid fa-mobile-screen";
+                    } 
+                    else if (categoryName === "fps-tps" || categoryName === "fps&tps") {
+                        fallbackIcon = "fa-solid fa-crosshairs";
+                    } 
+                    else if (categoryName === "simulation") {
+                        fallbackIcon = "fa-solid fa-car-side";
+                    } 
+                    else if (categoryName === "metroidvania" || categoryName === "metroidvanias") {
+                        fallbackIcon = "fa-solid fa-dungeon"; 
+                    } 
+                    else if (categoryName === "isometric") {
+                        fallbackIcon = "fa-solid fa-layer-group"; 
+                    } 
+                    else if (categoryName === "ar-vr" || categoryName === "ar&vr") {
+                        fallbackIcon = "fa-solid fa-vr-cardboard"; 
+                    }
 
                     // JSON Controlled Button
                     let heroBtnMarkup = '';
